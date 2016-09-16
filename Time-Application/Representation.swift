@@ -18,8 +18,9 @@ class URepresentation {
     
     let networkingBrain = UNetworking()
     
-    func loadDataWith(_ target: UService, callback: @escaping (Result<Void, UNetworkingError>) -> Void) {
+    func loadDataWith(_ target: UService, useRawData: Bool = false, callback: @escaping (Result<Void, UNetworkingError>) -> Void) {
         // representation with different target should prepare data in different way
+        // raw data uses when it is necessary to store in UDataElement not only main data
         switch target {
         case .getData(_, let level):
             networkingBrain.loadDataWith(target) { result in
@@ -32,10 +33,10 @@ class URepresentation {
                     // sorry
                     let range = 1...dataJSON.count
                     switch level {
-                    case .l1:
+                    case .l1, .l2:
                         self._data = range.map {
                             let item = dataJSON["\($0)"]
-                            return UDataElement(from: item)
+                            return UDataElement(from: item, withRawData: useRawData)
                         }
                     default: break
                     }
@@ -44,6 +45,7 @@ class URepresentation {
                     
                 case .failure(let error):
                     // callback with error
+                    self.clearData()
                     callback(.failure(error))
                     
                 }
@@ -65,5 +67,10 @@ class URepresentation {
     
     fileprivate func extractDataAndMetadata(from: JSON) -> (JSON, JSON) {
         return (from["data"], from["metadata"])
+    }
+    
+    fileprivate func clearData() {
+        _data = nil
+        _metadata = nil
     }
 }

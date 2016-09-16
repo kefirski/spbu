@@ -10,6 +10,7 @@ import Foundation
 
 import Moya
 import Result
+import Async
 
 class UNetworking {
     
@@ -38,7 +39,10 @@ class UNetworking {
                 // timed out). In this case wait not for a while and try to get data again
                 callback(.failure(.networkFailure))
                 // try to get data again
-                self.loadDataWith(target, and: callback)
+                Async.background {
+                    sleep(4)
+                    self.loadDataWith(target, and: callback)
+                }
             }
         }
     }

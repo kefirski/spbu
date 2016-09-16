@@ -11,20 +11,31 @@ import SwiftyJSON
 
 class UDataElement: UJSONEmbed {
     let title: String
-    let JSON_URI: String
-    let URI: String
+    let JSON_URI: String?
+    let URI: String?
     
-    init(from json: JSON) {
+    let rawData: [JSON]?
+    
+    init(from json: JSON, withRawData: Bool = false) {
         self.title = json["title"].string!
-        self.JSON_URI = json["JSON_URI"].string!
-        self.URI = json["URI"].string!
+        self.JSON_URI = json["JSON_URI"].string
+        self.URI = json["URI"].string
+        
+        if withRawData {
+            let range = 1...(json.count-1)
+            rawData = range.map {json["\($0)"]}
+        } else {
+            rawData = nil
+        }
     }
 }
 
 protocol UJSONEmbed {
-    var JSON_URI: String { get }
-    var URI: String { get }
+    var JSON_URI: String? { get }
+    var URI: String? { get }
 }
+
+
 
 class Metadata {
     let URI: String
