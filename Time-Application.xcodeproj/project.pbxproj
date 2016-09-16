@@ -58,6 +58,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A58212461D8C546500FB7F46 /* Representation */ = {
+			isa = PBXGroup;
+			children = (
+				A525EC401D8C4F9900F86E7D /* Representation.swift */,
+			);
+			name = Representation;
+			sourceTree = "<group>";
+		};
+		A58212471D8C547100FB7F46 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A525EC3F1D8C4F9900F86E7D /* Networking.swift */,
+				A525EC411D8C4F9900F86E7D /* Service.swift */,
+				A525EC421D8C4F9900F86E7D /* UNetworkingError.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		A58212481D8C547800FB7F46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A525EC3D1D8C4F9900F86E7D /* Entity.swift */,
+				A58212471D8C547100FB7F46 /* Networking */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A58212491D8C547E00FB7F46 /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				A525EC3E1D8C4F9900F86E7D /* L1TableViewController.swift */,
+			);
+			name = Controlers;
+			sourceTree = "<group>";
+		};
 		A5F7ED6E1D8C4EEF00F4E5B2 = {
 			isa = PBXGroup;
 			children = (
@@ -80,15 +115,12 @@
 			isa = PBXGroup;
 			children = (
 				A5F7ED7A1D8C4EEF00F4E5B2 /* AppDelegate.swift */,
+				A58212481D8C547800FB7F46 /* Model */,
+				A58212461D8C546500FB7F46 /* Representation */,
+				A58212491D8C547E00FB7F46 /* Controlers */,
 				A5F7ED7E1D8C4EEF00F4E5B2 /* Main.storyboard */,
 				A5F7ED811D8C4EEF00F4E5B2 /* Assets.xcassets */,
 				A5F7ED831D8C4EEF00F4E5B2 /* LaunchScreen.storyboard */,
-				A525EC3D1D8C4F9900F86E7D /* Entity.swift */,
-				A525EC3E1D8C4F9900F86E7D /* L1TableViewController.swift */,
-				A525EC3F1D8C4F9900F86E7D /* Networking.swift */,
-				A525EC401D8C4F9900F86E7D /* Representation.swift */,
-				A525EC411D8C4F9900F86E7D /* Service.swift */,
-				A525EC421D8C4F9900F86E7D /* UNetworkingError.swift */,
 				A5F7ED861D8C4EEF00F4E5B2 /* Info.plist */,
 			);
 			path = "Time-Application";

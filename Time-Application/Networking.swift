@@ -37,6 +37,8 @@ class UNetworking {
                 // wasn't sent (connectivity), or no response was received (server
                 // timed out). In this case wait not for a while and try to get data again
                 callback(.failure(.networkFailure))
+                // try to get data again
+                self.loadDataWith(target, and: callback)
             }
         }
     }
