@@ -16,10 +16,12 @@ class UNetworking {
     
     fileprivate let provider = MoyaProvider<UService>()
     
-    func loadDataWith(_ target: UService, and callback: @escaping (Result<Data, UNetworkingError>) -> Void) {
+    func loadDataWith(_ target: UService, and callback: @escaping UDataClojure) {
+        // UDataClojure is discribed in UResult file
         print("start downloading – target = \(target.baseURL, target.path)")
     // performs data downloading and pass it through the callback
         provider.request(target) {result in
+            print("test")
             switch result {
             case let .success(moyaResponse):
                 print("succes with statuscode = \(moyaResponse.statusCode)")
@@ -39,8 +41,7 @@ class UNetworking {
                 // timed out). In this case wait not for a while and try to get data again
                 callback(.failure(.networkFailure))
                 // try to get data again
-                Async.background {
-                    sleep(4)
+                Async.background(after: 4) {
                     self.loadDataWith(target, and: callback)
                 }
             }

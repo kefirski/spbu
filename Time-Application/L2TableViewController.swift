@@ -14,21 +14,16 @@ class L2TableViewController: UITableViewController {
     let representation = URepresentation()
     var jsonURI: String!
     
-    var dataWorkaround: [UDataElement]?
+    var dataFromLastLevel: [UDataElement]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if dataWorkaround.isNil {
+        if dataFromLastLevel.isNil {
             let target = UService.getData(path: jsonURI, onLevel: .l2)
             
-            representation.loadDataWith(target, useRawData: true) { result in
-                switch result {
-                case .success():
-                    self.tableView.reloadData()
-                case .failure(_ ):
-                    print("error")
-                }
+            representation.loadDataWith(target, usingRawData: true) { result in
+                self.tableView.reloadDataDependingOn(result)
             }
         }
     }
@@ -44,7 +39,8 @@ class L2TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let data = dataWorkaround {
+        // in case of using dataFromLastLevel table should be filled with it
+        if let data = dataFromLastLevel {
             return data.count
         } else {
             return representation.data.count
@@ -54,26 +50,36 @@ class L2TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l2Cell", for: indexPath)
 
-        let sourceData = dataWorkaround.isNil ? representation.data.map {$0 as! UDataElement} : dataWorkaround
-        let faculty = sourceData![indexPath.row]
+        // in case of using dataFromLastLevel table should be filled with it
+        let sourceData = dataFromLastLevel.isNil ? representation.data.map {$0 as! UDataElement} : dataFromLastLevel
+        let dataElement = sourceData![indexPath.row]
         
-        cell.textLabel?.text = faculty.title
+        cell.textLabel?.text = dataElement.title
         
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showL2.1" {
+        let identifier = segue.identifier
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        
+        if identifier == "showL2.1" {
             let destination = segue.destination as! L2TableViewController
             
-            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPath(for: cell)!
+            // if dataFromLastLevel is not used then destination should be embed with representation.data
+            let sourceData = dataFromLastLevel.isNil ? representation.data.map {$0 as! UDataElement} : dataFromLastLevel
             
-            // if workaround is not used then destination should be embed with representation.data
-            let sourceData = dataWorkaround.isNil ? representation.data.map {$0 as! UDataElement} : dataWorkaround
+            // get from source by indexPath.row Array<JSON> and instance UDataElement from ∀ JSON in this array
             let performedData = sourceData![indexPath.row].rawData!.map { UDataElement(from: $0, withRawData: true)}
             
-            destination.dataWorkaround = performedData
+            destination.dataFromLastLevel = performedData
+        } else if identifier == "showL3" {
+            let destination = segue.destination as! L3TableViewController
+            
+            // only dataFromLastLevel can be used when showL3 segue performed in case of data from the server archtecture
+            destination.jsonURI = dataFromLastLevel![indexPath.row].JSON_URI!
         }
     }
 

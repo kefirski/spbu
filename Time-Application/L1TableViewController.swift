@@ -13,20 +13,13 @@ class L1TableViewController: UITableViewController {
 
     let representation = URepresentation()
     
-    let jsonURI = "root.json"
+    let target = UService.getData(path: "root.json", onLevel: .l1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let target = UService.getData(path: jsonURI, onLevel: .l1)
         
         representation.loadDataWith(target) { result in
-            switch result {
-            case .success():
-                self.tableView.reloadData()
-            case .failure(_ ):
-                print("error")
-            }
+            self.tableView.reloadDataDependingOn(result)
         }
     }
 

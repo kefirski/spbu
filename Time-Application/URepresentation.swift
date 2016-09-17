@@ -18,9 +18,10 @@ class URepresentation {
     
     let networkingBrain = UNetworking()
     
-    func loadDataWith(_ target: UService, useRawData: Bool = false, callback: @escaping (Result<Void, UNetworkingError>) -> Void) {
+    func loadDataWith(_ target: UService, usingRawData: Bool = false, andThen performCallback: @escaping UVoidClojure) {
         // representation with different target should prepare data in different way
         // raw data uses when it is necessary to store in UDataElement not only main data
+        // UVoidClojure is discribed in UResult file
         switch target {
         case .getData(_, let level):
             networkingBrain.loadDataWith(target) { result in
@@ -28,6 +29,10 @@ class URepresentation {
                 case .success(let data):
                     let rawJSON = JSON(data: data)
                     let (dataJSON, metadataJSON) = self.extractDataAndMetadata(from: rawJSON)
+                    
+                    if level == .l3 {
+                        print(dataJSON)
+                    }
 
                     self._metadata = Metadata(from: metadataJSON)
                     // sorry
@@ -36,18 +41,22 @@ class URepresentation {
                     case .l1, .l2:
                         self._data = range.map {
                             let item = dataJSON["\($0)"]
-                            return UDataElement(from: item, withRawData: useRawData)
+                            return UDataElement(from: item, withRawData: usingRawData)
+                        }
+                    case .l3:
+                        self._data = range.map {
+                            let item = dataJSON["\($0)"]
+                            return UDataElementWithForm(from: item)
                         }
                     default: break
                     }
                     // everything is ok
-                    callback(.success())
+                    performCallback(.success())
                     
                 case .failure(let error):
                     // callback with error
                     self.clearData()
-                    callback(.failure(error))
-                    
+                    performCallback(.failure(error))
                 }
             }
         }

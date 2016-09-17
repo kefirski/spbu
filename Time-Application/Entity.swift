@@ -30,6 +30,15 @@ class UDataElement: UJSONEmbed {
     }
 }
 
+class UDataElementWithForm: UDataElement {
+    let form: String
+    
+    init(from json: JSON) {
+        self.form = json["form"].string!
+        super.init(from: json)
+    }
+}
+
 protocol UJSONEmbed {
     var JSON_URI: String? { get }
     var URI: String? { get }
