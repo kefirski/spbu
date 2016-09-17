@@ -29,19 +29,26 @@ class L3TableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return representation.data.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let group = representation.data[section] as! GroupedUDataElement
+        return group.form
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return representation.data.count
+        let group = representation.data[section] as! GroupedUDataElement
+        return group.groupedElements.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l3Cell", for: indexPath)
-
-        let dataElement = representation.data[indexPath.row] as! UDataElement
         
-        cell.textLabel?.text = dataElement.title
+        let group = representation.data[indexPath.section] as! GroupedUDataElement
+        let dataElement = group.groupedElements[indexPath.row]
+        
+        cell.textLabel?.text = dataElement.title + dataElement.form
 
         return cell
     }

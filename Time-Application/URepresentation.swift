@@ -44,10 +44,12 @@ class URepresentation {
                             return UDataElement(from: item, withRawData: usingRawData)
                         }
                     case .l3:
-                        self._data = range.map {
+                        let rawData: [UDataElementWithForm] = range.map {
                             let item = dataJSON["\($0)"]
                             return UDataElementWithForm(from: item)
                         }
+                        self._data = rawData.groupByForm()
+                        
                     default: break
                     }
                     // everything is ok
