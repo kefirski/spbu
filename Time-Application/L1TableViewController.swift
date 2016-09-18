@@ -18,6 +18,9 @@ class L1TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.setBackgroundColor()
+        self.setupUI()
+        
         representation.loadDataWith(target) { result in
             self.tableView.reloadDataDependingOn(result)
         }
@@ -61,5 +64,23 @@ class L1TableViewController: UITableViewController {
         destination.jsonURI = faculty.JSON_URI!
         
     }
+    
+    func setupUI() {
+        let navigationBar = self.navigationController!.navigationBar
+        let img = UIImage()
+        navigationBar.shadowImage = img
+        navigationBar.setBackgroundImage(img, for: .default)
+        
+        navigationBar.backgroundColor = UColor.backgroundColor
+        navigationBar.tintColor = UColor.greyContentColor
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Назад"
+        navigationItem.backBarButtonItem = backItem
+        
+    }
 
 }
+
+
+

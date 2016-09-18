@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Result
 
 extension UITableView {
@@ -17,5 +18,9 @@ extension UITableView {
         case .failure(_ ):
             print("error")
         }
+    }
+    
+    func setBackgroundColor() {
+        self.backgroundColor = UColor.backgroundColor
     }
 }

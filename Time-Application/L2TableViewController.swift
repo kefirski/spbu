@@ -39,6 +39,7 @@ class L2TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         // in case of using dataFromLastLevel table should be filled with it
         if let data = dataFromLastLevel {
             return data.count
@@ -51,8 +52,8 @@ class L2TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l2Cell", for: indexPath)
 
         // in case of using dataFromLastLevel table should be filled with it
-        let sourceData = dataFromLastLevel.isNil ? representation.data.map {$0 as! UDataElement} : dataFromLastLevel
-        let dataElement = sourceData![indexPath.row]
+        let sourceData = checkSourceData()
+        let dataElement = sourceData[indexPath.row]
         
         cell.textLabel?.text = dataElement.title
         
@@ -68,11 +69,10 @@ class L2TableViewController: UITableViewController {
         if identifier == "showL2.1" {
             let destination = segue.destination as! L2TableViewController
             
-            // if dataFromLastLevel is not used then destination should be embed with representation.data
-            let sourceData = dataFromLastLevel.isNil ? representation.data.map {$0 as! UDataElement} : dataFromLastLevel
+            let sourceData = checkSourceData()
             
             // get from source by indexPath.row Array<JSON> and instance UDataElement from ∀ JSON in this array
-            let performedData = sourceData![indexPath.row].rawData!.map { UDataElement(from: $0, withRawData: true)}
+            let performedData = sourceData[indexPath.row].rawData!.map { UDataElement(from: $0, withRawData: true)}
             
             destination.dataFromLastLevel = performedData
         } else if identifier == "showL3" {
@@ -87,5 +87,14 @@ class L2TableViewController: UITableViewController {
         return 75
     }
 
+    func checkSourceData() -> [UDataElement] {
+        
+        // if dataFromLastLevel is not used then return representation.data
+        if let dataFromLastLevel = dataFromLastLevel {
+            return dataFromLastLevel
+        } else {
+            return representation.data.map {$0 as! UDataElement}
+        }
+    }
 
 }

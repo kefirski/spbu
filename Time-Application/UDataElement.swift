@@ -22,10 +22,10 @@ class UDataElement: UJSONEmbed {
         self.URI = json["URI"].string
         
         if withRawData {
-            let countWithoutTitle = json.count-1
+            let count = (json.count)-1
             
-            if countWithoutTitle != 1 {
-                let range = 1...(countWithoutTitle)
+            if count != 0 {
+                let range = 1...(count)
                 rawData = range.map {json["\($0)"]}
             } else {
                 rawData = []
