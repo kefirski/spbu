@@ -35,9 +35,13 @@ class UDataElementStudyDay: UDataElement {
     let TSEnd: Int
     var classes: [UClass]!
 
-     init(from json: JSON) {
-        let TSBegin = json["TS_begin"].int!
-        let TSEnd = json["TS_end"].int!
+     init?(from json: JSON) {
+        
+        guard let TSBegin = json["TS_begin"].int, let TSEnd = json["TS_end"].int else {
+            // I am afraid that in some cases timestamps could be not included in data
+            // so this day should be dropped out
+            return nil
+        }
         
         self.TSBegin = TSBegin
         self.TSEnd = TSEnd

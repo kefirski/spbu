@@ -20,8 +20,8 @@ class L2TableViewController: UITableViewController {
         super.viewDidLoad()
 
         if dataFromLastLevel.isNil {
-            let target = UService.getData(path: jsonURI, onLevel: .l2)
             
+            let target = UService.getData(path: jsonURI, onLevel: .l2)
             representation.loadDataWith(target, rawData: true) { result in
                 self.tableView.reloadDataDependingOn(result)
             }

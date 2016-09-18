@@ -12,4 +12,5 @@ import Result
 enum UNetworkingError: Error {
     case responseCodeError
     case networkFailure
+    case dataError
 }

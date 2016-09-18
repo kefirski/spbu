@@ -19,25 +19,27 @@ class URepresentation {
     let networkingBrain = UNetworking()
     
     func loadDataWith(_ target: UService, rawData: Bool = false, andThen performCallback: @escaping UVoidClojure) {
-        // representation with different target should prepare data in different way
+        
+        // representations with different targets should prepare data in different way
         // raw data uses when it is necessary to store in UDataElement not only main data
+        
         // UVoidClojure is discribed in UResult file
+        
         switch target {
         case .getData(_, let level):
             networkingBrain.loadDataWith(target) { result in
                 switch result {
                 case .success(let data):
+                    
                     let rawJSON = JSON(data: data)
-                    
-                    self.fillData(with: rawJSON, and: level, using: rawData)
-                    
-                    // everything is ok
-                    performCallback(.success())
+                    self.fillData(with: rawJSON, and: level, using: rawData, andThen: performCallback)
                     
                 case .failure(let error):
-                    // callback with error
+                    
+                    // callback with connection error
                     self.clearData()
                     performCallback(.failure(error))
+                    
                 }
             }
         }
@@ -45,7 +47,7 @@ class URepresentation {
     
     var data: [AnyObject] {
         if let _data = _data {
-            return _data.flatMap {$0} // filter in case of nils
+            return _data
         } else {
             return []
         }
@@ -55,14 +57,19 @@ class URepresentation {
         return _metadata
     }
     
-    fileprivate func fillData(with rawJSON: JSON, and level: ULevel, using rawData: Bool) {
+    fileprivate func fillData(with rawJSON: JSON, and level: ULevel, using rawData: Bool, andThen performCallback: UVoidClojure) {
         
         let (dataJSON, metadataJSON) = self.extractDataAndMetadata(from: rawJSON)
         
         self._metadata = Metadata(from: metadataJSON)
         
-        // sorry
-        let jsons: [JSON] = self.jsonArrayFrom(range: 1...dataJSON.count, and: dataJSON)
+        guard dataJSON.exists() else {
+            self.clearData()
+            performCallback(.failure(.dataError))
+            return
+        }
+        
+        let jsons: [JSON] = self.jsonArrayFrom(json: dataJSON)
         
         switch level {
         case .l1, .l2, .l4:
@@ -76,17 +83,21 @@ class URepresentation {
             self._data = rawData.groupByForm()
             
         case .l5:
-            self._data = jsons.map { item in
+            self._data = jsons.flatMap { item in
                 return UDataElementStudyDay(from: item)
             }
         }
+        
+        performCallback(.success())
+        
     }
     
     fileprivate func extractDataAndMetadata(from: JSON) -> (JSON, JSON) {
         return (from["data"], from["metadata"])
     }
     
-     fileprivate func jsonArrayFrom(range: CountableClosedRange<JSON.IndexDistance>, and json: JSON) -> [JSON] {
+     fileprivate func jsonArrayFrom(json: JSON) -> [JSON] {
+        let range = 1...json.count
         return range.map {json["\($0)"]}
     }
     

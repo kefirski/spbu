@@ -27,9 +27,9 @@ class UClass {
 
         location = json["location"].string
         
-        let subject = json["subject"].string!
-        if let subjectType = json["subjectType"].string {
-            title = "\(subjectType.uppercaseFirst) \(subject)"
+        let subject = json["subject"].string!.uppercaseFirst
+        if let subjectType = json["subjectType"].string?.uppercaseFirst {
+            title = "\(subjectType) \(subject)"
         } else {
             title = "\(subject)"
         }
