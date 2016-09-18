@@ -45,8 +45,7 @@ class L3TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l3Cell", for: indexPath)
         
-        let group = representation.data[indexPath.section] as! GroupedUDataElement
-        let dataElement = group.groupedElements[indexPath.row]
+        let dataElement = getDataElement(for: indexPath)
         
         cell.textLabel?.text = dataElement.title + dataElement.form
 
@@ -56,5 +55,29 @@ class L3TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! L4TableViewController
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        
+        let dataElement = getDataElement(for: indexPath)
+        
+        destination.jsonURI = dataElement.JSON_URI!
+        
+    }
+    
+    func getDataElement(for indexPath: IndexPath) -> UDataElementWithForm {
+        let group = representation.data[indexPath.section] as! GroupedUDataElement
+        let dataElement = group.groupedElements[indexPath.row]
+        
+        return dataElement
+    }
 
 }
+
+
+
+
+

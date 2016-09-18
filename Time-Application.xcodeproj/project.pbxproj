@@ -20,8 +20,11 @@
 		A591FEFE1D8D39FE001AFFF0 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FEFD1D8D39FE001AFFF0 /* UITableView.swift */; };
 		A591FF011D8D3B12001AFFF0 /* UResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF001D8D3B12001AFFF0 /* UResult.swift */; };
 		A591FF031D8D56F4001AFFF0 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF021D8D56F4001AFFF0 /* Metadata.swift */; };
-		A591FF051D8D5902001AFFF0 /* ArrayOfUDataElementWithForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF041D8D5902001AFFF0 /* ArrayOfUDataElementWithForm.swift */; };
+		A591FF051D8D5902001AFFF0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF041D8D5902001AFFF0 /* Array.swift */; };
 		A59AE1E11D8D21AD0060A17F /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59AE1E01D8D21AD0060A17F /* Async.swift */; };
+		A5CB38921D8E8A170003DB74 /* L4TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB38911D8E8A170003DB74 /* L4TableViewController.swift */; };
+		A5E3C2CF1D8E9B4B004C28E0 /* UClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2CE1D8E9B4B004C28E0 /* UClass.swift */; };
+		A5E3C2D11D8EA170004C28E0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2D01D8EA170004C28E0 /* String.swift */; };
 		A5F7ED7B1D8C4EEF00F4E5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7ED7A1D8C4EEF00F4E5B2 /* AppDelegate.swift */; };
 		A5F7ED801D8C4EEF00F4E5B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F7ED7E1D8C4EEF00F4E5B2 /* Main.storyboard */; };
 		A5F7ED821D8C4EEF00F4E5B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F7ED811D8C4EEF00F4E5B2 /* Assets.xcassets */; };
@@ -42,8 +45,11 @@
 		A591FEFD1D8D39FE001AFFF0 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		A591FF001D8D3B12001AFFF0 /* UResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UResult.swift; sourceTree = "<group>"; };
 		A591FF021D8D56F4001AFFF0 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
-		A591FF041D8D5902001AFFF0 /* ArrayOfUDataElementWithForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayOfUDataElementWithForm.swift; sourceTree = "<group>"; };
+		A591FF041D8D5902001AFFF0 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		A59AE1E01D8D21AD0060A17F /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		A5CB38911D8E8A170003DB74 /* L4TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L4TableViewController.swift; sourceTree = "<group>"; };
+		A5E3C2CE1D8E9B4B004C28E0 /* UClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UClass.swift; sourceTree = "<group>"; };
+		A5E3C2D01D8EA170004C28E0 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A5F7ED771D8C4EEF00F4E5B2 /* Time-Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time-Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F7ED7A1D8C4EEF00F4E5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F7ED7F1D8C4EEF00F4E5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +80,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A58212461D8C546500FB7F46 /* Representation */ = {
+		A5CB38881D8E84AE0003DB74 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A525EC3D1D8C4F9900F86E7D /* UDataElement.swift */,
+				A5E3C2CE1D8E9B4B004C28E0 /* UClass.swift */,
+				A591FF021D8D56F4001AFFF0 /* Metadata.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		A5CB38891D8E84B80003DB74 /* Typelias */ = {
+			isa = PBXGroup;
+			children = (
+				A591FF001D8D3B12001AFFF0 /* UResult.swift */,
+			);
+			name = Typelias;
+			sourceTree = "<group>";
+		};
+		A5CB388A1D8E84CE0003DB74 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB388B1D8E84F40003DB74 /* Networking */,
+				A5CB38881D8E84AE0003DB74 /* Entity */,
+				A5CB38891D8E84B80003DB74 /* Typelias */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A5CB388B1D8E84F40003DB74 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A525EC3F1D8C4F9900F86E7D /* UNetworking.swift */,
+				A525EC421D8C4F9900F86E7D /* UNetworkingError.swift */,
+				A525EC411D8C4F9900F86E7D /* UService.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		A5CB388C1D8E85050003DB74 /* Representation */ = {
 			isa = PBXGroup;
 			children = (
 				A525EC401D8C4F9900F86E7D /* URepresentation.swift */,
@@ -82,53 +126,27 @@
 			name = Representation;
 			sourceTree = "<group>";
 		};
-		A58212471D8C547100FB7F46 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				A525EC3F1D8C4F9900F86E7D /* UNetworking.swift */,
-				A525EC411D8C4F9900F86E7D /* UService.swift */,
-				A525EC421D8C4F9900F86E7D /* UNetworkingError.swift */,
-			);
-			name = Networking;
-			sourceTree = "<group>";
-		};
-		A58212481D8C547800FB7F46 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A525EC3D1D8C4F9900F86E7D /* UDataElement.swift */,
-				A591FF021D8D56F4001AFFF0 /* Metadata.swift */,
-				A58212471D8C547100FB7F46 /* Networking */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		A58212491D8C547E00FB7F46 /* Controlers */ = {
+		A5CB388D1D8E850F0003DB74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A525EC3E1D8C4F9900F86E7D /* L1TableViewController.swift */,
 				A582124A1D8C6F7400FB7F46 /* L2TableViewController.swift */,
 				A591FEFB1D8D355E001AFFF0 /* L3TableViewController.swift */,
+				A5CB38911D8E8A170003DB74 /* L4TableViewController.swift */,
 			);
-			name = Controlers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		A582124C1D8C796F00FB7F46 /* Extensions */ = {
+		A5CB388E1D8E851C0003DB74 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				A582124D1D8C798800FB7F46 /* Optional.swift */,
 				A591FEFD1D8D39FE001AFFF0 /* UITableView.swift */,
 				A59AE1E01D8D21AD0060A17F /* Async.swift */,
-				A591FF041D8D5902001AFFF0 /* ArrayOfUDataElementWithForm.swift */,
+				A591FF041D8D5902001AFFF0 /* Array.swift */,
+				A5E3C2D01D8EA170004C28E0 /* String.swift */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		A591FEFF1D8D3AFA001AFFF0 /* Typelias */ = {
-			isa = PBXGroup;
-			children = (
-				A591FF001D8D3B12001AFFF0 /* UResult.swift */,
-			);
-			name = Typelias;
 			sourceTree = "<group>";
 		};
 		A5F7ED6E1D8C4EEF00F4E5B2 = {
@@ -153,11 +171,10 @@
 			isa = PBXGroup;
 			children = (
 				A5F7ED7A1D8C4EEF00F4E5B2 /* AppDelegate.swift */,
-				A58212481D8C547800FB7F46 /* Model */,
-				A58212461D8C546500FB7F46 /* Representation */,
-				A58212491D8C547E00FB7F46 /* Controlers */,
-				A582124C1D8C796F00FB7F46 /* Extensions */,
-				A591FEFF1D8D3AFA001AFFF0 /* Typelias */,
+				A5CB388A1D8E84CE0003DB74 /* Model */,
+				A5CB388C1D8E85050003DB74 /* Representation */,
+				A5CB388D1D8E850F0003DB74 /* Controllers */,
+				A5CB388E1D8E851C0003DB74 /* Extensions */,
 				A5F7ED811D8C4EEF00F4E5B2 /* Assets.xcassets */,
 				A5F7ED7E1D8C4EEF00F4E5B2 /* Main.storyboard */,
 				A5F7ED831D8C4EEF00F4E5B2 /* LaunchScreen.storyboard */,
@@ -304,14 +321,17 @@
 				A5F7ED7B1D8C4EEF00F4E5B2 /* AppDelegate.swift in Sources */,
 				A582124E1D8C798800FB7F46 /* Optional.swift in Sources */,
 				A525EC461D8C4F9900F86E7D /* URepresentation.swift in Sources */,
+				A5E3C2CF1D8E9B4B004C28E0 /* UClass.swift in Sources */,
 				A582124B1D8C6F7400FB7F46 /* L2TableViewController.swift in Sources */,
 				A591FEFE1D8D39FE001AFFF0 /* UITableView.swift in Sources */,
 				A525EC441D8C4F9900F86E7D /* L1TableViewController.swift in Sources */,
-				A591FF051D8D5902001AFFF0 /* ArrayOfUDataElementWithForm.swift in Sources */,
+				A591FF051D8D5902001AFFF0 /* Array.swift in Sources */,
 				A525EC451D8C4F9900F86E7D /* UNetworking.swift in Sources */,
 				A525EC481D8C4F9900F86E7D /* UNetworkingError.swift in Sources */,
+				A5E3C2D11D8EA170004C28E0 /* String.swift in Sources */,
 				A591FF011D8D3B12001AFFF0 /* UResult.swift in Sources */,
 				A59AE1E11D8D21AD0060A17F /* Async.swift in Sources */,
+				A5CB38921D8E8A170003DB74 /* L4TableViewController.swift in Sources */,
 				A525EC471D8C4F9900F86E7D /* UService.swift in Sources */,
 				A591FEFC1D8D355E001AFFF0 /* L3TableViewController.swift in Sources */,
 			);

@@ -37,7 +37,7 @@ extension Array {
         
         // group elements by its unique features
         let result = uniqueFeatures.reduce([]) { (resultAccomulator: [[R]], nextFeature: T) in
-            // find appropriate to single unique feature
+            // find appropriate elements to every single unique feature
             let appropriateElements = elements.filter {f($0) == nextFeature}
             // accomulate result with appropriate elements
             return resultAccomulator + [appropriateElements]

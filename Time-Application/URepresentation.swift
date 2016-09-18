@@ -30,7 +30,7 @@ class URepresentation {
                     let rawJSON = JSON(data: data)
                     let (dataJSON, metadataJSON) = self.extractDataAndMetadata(from: rawJSON)
                     
-                    if level == .l3 {
+                    if level == .l4 {
                         print(dataJSON)
                     }
 
@@ -38,7 +38,7 @@ class URepresentation {
                     // sorry
                     let range = 1...dataJSON.count
                     switch level {
-                    case .l1, .l2:
+                    case .l1, .l2, .l4:
                         self._data = range.map {
                             let item = dataJSON["\($0)"]
                             return UDataElement(from: item, withRawData: usingRawData)
@@ -65,8 +65,8 @@ class URepresentation {
     }
     
     var data: [AnyObject] {
-        if let qdata = _data {
-            return qdata
+        if let _data = _data {
+            return _data.flatMap {$0} // filter in case of nils
         } else {
             return []
         }

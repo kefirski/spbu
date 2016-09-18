@@ -17,8 +17,9 @@ enum ULevel: Int {
     
     // returns level mark (i.e for level .l1 returns "?L1")
     var mark: String {
-//        return "?L\(self.rawValue)"
+//        return "\\u{3F}" + "L\(self.rawValue)"
         return ""
+
     }
 }
 

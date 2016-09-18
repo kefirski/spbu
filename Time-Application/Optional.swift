@@ -18,5 +18,13 @@ extension Optional {
             return true
         }
     }
-    
+ 
+//    func recover<T>(or: T) -> T {
+//        switch self {
+//        case .some(let value):
+//            return value as! T
+//        case .none:
+//        return or
+//        }
+//    }
 }
