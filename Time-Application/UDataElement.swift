@@ -30,7 +30,24 @@ class UDataElement: UJSONEmbed {
     }
 }
 
+class UDataElementStudyDay: UDataElement {
+    let TSBegin: Int
+    let TSEnd: Int
+    let classes: [UClass]
 
+//    init?(from json: JSON) {
+//        super.init(from: json, withRawData: true)
+//        
+//        guard let TSBegin = json["TS_begin"].int, let TSEnd = json["TS_end"].int else {
+//            // this day should be dropped out
+//            return nil
+//        }
+//        
+//        self.TSBegin = TSBegin
+//        self.TSEnd = TSEnd
+//        
+//    }
+}
 
 class UDataElementWithForm: UDataElement {
     let form: String

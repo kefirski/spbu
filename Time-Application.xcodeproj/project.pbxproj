@@ -25,6 +25,7 @@
 		A5CB38921D8E8A170003DB74 /* L4TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB38911D8E8A170003DB74 /* L4TableViewController.swift */; };
 		A5E3C2CF1D8E9B4B004C28E0 /* UClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2CE1D8E9B4B004C28E0 /* UClass.swift */; };
 		A5E3C2D11D8EA170004C28E0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2D01D8EA170004C28E0 /* String.swift */; };
+		A5E3C2D31D8EAA4C004C28E0 /* ULocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2D21D8EAA4C004C28E0 /* ULocation.swift */; };
 		A5F7ED7B1D8C4EEF00F4E5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7ED7A1D8C4EEF00F4E5B2 /* AppDelegate.swift */; };
 		A5F7ED801D8C4EEF00F4E5B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F7ED7E1D8C4EEF00F4E5B2 /* Main.storyboard */; };
 		A5F7ED821D8C4EEF00F4E5B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F7ED811D8C4EEF00F4E5B2 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		A5CB38911D8E8A170003DB74 /* L4TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L4TableViewController.swift; sourceTree = "<group>"; };
 		A5E3C2CE1D8E9B4B004C28E0 /* UClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UClass.swift; sourceTree = "<group>"; };
 		A5E3C2D01D8EA170004C28E0 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A5E3C2D21D8EAA4C004C28E0 /* ULocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULocation.swift; sourceTree = "<group>"; };
 		A5F7ED771D8C4EEF00F4E5B2 /* Time-Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time-Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F7ED7A1D8C4EEF00F4E5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F7ED7F1D8C4EEF00F4E5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				A525EC3D1D8C4F9900F86E7D /* UDataElement.swift */,
 				A5E3C2CE1D8E9B4B004C28E0 /* UClass.swift */,
+				A5E3C2D21D8EAA4C004C28E0 /* ULocation.swift */,
 				A591FF021D8D56F4001AFFF0 /* Metadata.swift */,
 			);
 			name = Entity;
@@ -324,6 +327,7 @@
 				A5E3C2CF1D8E9B4B004C28E0 /* UClass.swift in Sources */,
 				A582124B1D8C6F7400FB7F46 /* L2TableViewController.swift in Sources */,
 				A591FEFE1D8D39FE001AFFF0 /* UITableView.swift in Sources */,
+				A5E3C2D31D8EAA4C004C28E0 /* ULocation.swift in Sources */,
 				A525EC441D8C4F9900F86E7D /* L1TableViewController.swift in Sources */,
 				A591FF051D8D5902001AFFF0 /* Array.swift in Sources */,
 				A525EC451D8C4F9900F86E7D /* UNetworking.swift in Sources */,

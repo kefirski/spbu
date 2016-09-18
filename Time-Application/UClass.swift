@@ -16,6 +16,7 @@ class UClass {
     let unit: String
     let TSBegin: Int
     let TSEnd: Int
+    let lunapark: [ULocation]
 
     init?(from json: JSON) {
         
@@ -40,5 +41,7 @@ class UClass {
         
         self.TSBegin = TSBegin
         self.TSEnd = TSEnd
+        
+        lunapark = json["lunapark"].array!.map {ULocation(from: $0)}
     }
 }
