@@ -49,4 +49,18 @@ class L4TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! L5TableViewController
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        
+        let dataElement = representation.data[indexPath.row] as! UDataElement
+        
+        destination.jsonURI = dataElement.JSON_URI!
+    }
 }
+
+
+

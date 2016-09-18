@@ -22,7 +22,7 @@ class L2TableViewController: UITableViewController {
         if dataFromLastLevel.isNil {
             let target = UService.getData(path: jsonURI, onLevel: .l2)
             
-            representation.loadDataWith(target, usingRawData: true) { result in
+            representation.loadDataWith(target, rawData: true) { result in
                 self.tableView.reloadDataDependingOn(result)
             }
         }
