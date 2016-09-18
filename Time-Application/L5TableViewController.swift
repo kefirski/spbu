@@ -16,9 +16,13 @@ class L5TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI {
+            tableView.setBackgroundColor()
+        }
+        
         let target = UService.getData(path: jsonURI, onLevel: .l5)
         representation.loadDataWith(target) { result in
-            self.tableView.reloadDataDependingOn(result)
+            self.reloadDataDependingOn(result)
         }
     }
 
@@ -38,6 +42,7 @@ class L5TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l5Cell", for: indexPath)
+        cell.setBackgroundColor()
         
         let uClass = classFor(day: indexPath.section, index: indexPath.row)
         

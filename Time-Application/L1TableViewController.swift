@@ -18,11 +18,13 @@ class L1TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.setBackgroundColor()
-        self.setupUI()
+        self.setupUI {
+            tableView.setBackgroundColor()
+            setupNavigationBar()
+        }
         
         representation.loadDataWith(target) { result in
-            self.tableView.reloadDataDependingOn(result)
+            self.reloadDataDependingOn(result)
         }
     }
 
@@ -45,7 +47,8 @@ class L1TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l1Cell", for: indexPath)
-        
+        cell.setBackgroundColor()
+
         let faculty = representation.data[indexPath.row] as! UDataElement
             
         cell.textLabel?.text = faculty.title
@@ -65,7 +68,7 @@ class L1TableViewController: UITableViewController {
         
     }
     
-    func setupUI() {
+    func setupNavigationBar() {
         let navigationBar = self.navigationController!.navigationBar
         let img = UIImage()
         navigationBar.shadowImage = img
@@ -77,7 +80,6 @@ class L1TableViewController: UITableViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Назад"
         navigationItem.backBarButtonItem = backItem
-        
     }
 
 }

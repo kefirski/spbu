@@ -16,9 +16,13 @@ class L3TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI {
+            tableView.setBackgroundColor()
+        }
+        
         let target = UService.getData(path: jsonURI, onLevel: .l3)
         representation.loadDataWith(target) { result in
-            self.tableView.reloadDataDependingOn(result)
+            self.reloadDataDependingOn(result)
         }
     }
 
@@ -44,6 +48,7 @@ class L3TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l3Cell", for: indexPath)
+        cell.setBackgroundColor()
         
         let dataElement = getDataElement(for: indexPath)
         

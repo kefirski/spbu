@@ -18,12 +18,15 @@ class L2TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI {
+            tableView.setBackgroundColor()
+        }
 
-        if dataFromLastLevel.isNil {
-            
+        if dataFromLastLevel.isNil { // otherwise dataFromLasrLevel would be used
             let target = UService.getData(path: jsonURI, onLevel: .l2)
             representation.loadDataWith(target, rawData: true) { result in
-                self.tableView.reloadDataDependingOn(result)
+                self.reloadDataDependingOn(result)
             }
         }
     }
@@ -50,6 +53,8 @@ class L2TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l2Cell", for: indexPath)
+        cell.setBackgroundColor()
+
 
         // in case of using dataFromLastLevel table should be filled with it
         let sourceData = checkSourceData()

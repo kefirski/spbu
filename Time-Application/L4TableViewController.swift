@@ -16,9 +16,13 @@ class L4TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI {
+            tableView.setBackgroundColor()
+        }
+        
         let target = UService.getData(path: jsonURI, onLevel: .l4)
         representation.loadDataWith(target) { result in
-            self.tableView.reloadDataDependingOn(result)
+            self.reloadDataDependingOn(result)
         }
     }
 
@@ -38,7 +42,9 @@ class L4TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l4Cell", for: indexPath)
+        cell.setBackgroundColor()
 
+        
         let dataElement = representation.data[indexPath.row] as! UDataElement
         
         cell.textLabel?.text = dataElement.title

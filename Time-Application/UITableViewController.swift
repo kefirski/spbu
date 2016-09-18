@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 import Result
 
-extension UITableView {
+extension UITableViewController {
     func reloadDataDependingOn(_ result: UVoidResult) -> Void {
         switch result {
         case .success():
-            self.reloadData()
+            self.tableView.reloadData()
         case .failure(_ ):
             print("error")
         }
     }
     
-    func setBackgroundColor() {
-        self.backgroundColor = UColor.backgroundColor
+    func setupUI(f: () -> Void) {
+        f()
     }
 }
