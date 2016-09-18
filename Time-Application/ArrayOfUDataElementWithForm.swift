@@ -11,29 +11,13 @@ import Foundation
 extension Array where Element: UDataElementWithForm {
     func groupByForm() -> [GroupedUDataElement] {
         
-//        let forms: Set<String> = Set(self.map {$0.form}) // unique forms form data
-//        
-//        var result: [GroupedUDataElement] = []
-//        
-//        for form in forms {
-//            // find appropriate to form elements
-//            let elementsWithForm = self.filter {element in
-//                let dataElement = element as UDataElementWithForm
-//                return dataElement.form == form
-//            }
-//            // instance groupedUDataElement with appropriate elements and append it to result
-//            let groupedElement = GroupedUDataElement(form: form, elements: elementsWithForm)
-//            result.append(groupedElement)
-//        }
-//        return result
-        
-        let filteredDataElements = self.groupByFeature {$0.form}.map { (elements: [Element]) in
-            elements.map { (element: Element) in
-                return element as UDataElementWithForm
-            }
+        // get grouped by form elements
+        let groupedElements = self.groupByFeature { (dataElement: UDataElementWithForm) in
+            return dataElement.form
         }
         
-        let result = filteredDataElements.map { dataElements -> GroupedUDataElement in
+        // instance GroupedUDataElement from each group
+        let result = groupedElements.map {dataElements -> GroupedUDataElement in
             let form = dataElements.first!.form
             return GroupedUDataElement(form: form, elements: dataElements)
         }
@@ -44,12 +28,18 @@ extension Array where Element: UDataElementWithForm {
 
 
 extension Array {
-    func groupByFeature<T: Hashable> (_ f: @escaping (Element) -> T) -> [[Element]] {
-        let uniqueFeatures = Set(self.map {f($0)})
+    func groupByFeature<T: Hashable, R> (_ f: @escaping (R) -> T) -> [[R]] {
+        // cast [Element] to [R]
+        let elements = self.map {$0 as! R}
         
-        let result = uniqueFeatures.reduce([]) { (resultAccomulator: [[Element]], nextFeature: T) in
-            let appropriateElements = self.filter {f($0) == nextFeature}
-            
+        // find unique features of [R]
+        let uniqueFeatures = Set(elements.map {f($0)})
+        
+        // group elements by its unique features
+        let result = uniqueFeatures.reduce([]) { (resultAccomulator: [[R]], nextFeature: T) in
+            // find appropriate to single unique feature
+            let appropriateElements = elements.filter {f($0) == nextFeature}
+            // accomulate result with appropriate elements
             return resultAccomulator + [appropriateElements]
         }
         
