@@ -32,7 +32,7 @@ class URepresentation {
                 case .success(let data):
                     
                     let rawJSON = JSON(data: data)
-                    self.fillData(with: rawJSON, and: level, using: rawData, andThen: performCallback)
+                    self.fillData(with: rawJSON, dependingOn: level, using: rawData, andThen: performCallback)
                     
                 case .failure(let error):
                     
@@ -57,7 +57,7 @@ class URepresentation {
         return _metadata
     }
     
-    fileprivate func fillData(with rawJSON: JSON, and level: ULevel, using rawData: Bool, andThen performCallback: UVoidClojure) {
+    fileprivate func fillData(with rawJSON: JSON, dependingOn level: ULevel, using rawData: Bool, andThen performCallback: UVoidClojure) {
         
         let (dataJSON, metadataJSON) = self.extractDataAndMetadata(from: rawJSON)
         
