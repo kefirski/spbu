@@ -15,15 +15,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.9882352941176471" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l1Cell" rowHeight="75" id="3Kv-Tu-zrQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l1Cell" rowHeight="75" id="3Kv-Tu-zrQ" customClass="SimpleTableViewCell" customModule="Time_Application" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Kv-Tu-zrQ" id="Pc7-ia-9sw">
                                     <frame key="frameInset" width="375" height="74.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNC-Ce-h8K">
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="JNC-Ce-h8K" secondAttribute="trailing" constant="50" id="2G3-qy-la2"/>
+                                        <constraint firstItem="JNC-Ce-h8K" firstAttribute="centerY" secondItem="Pc7-ia-9sw" secondAttribute="centerY" id="dYb-eJ-3gZ"/>
+                                        <constraint firstItem="JNC-Ce-h8K" firstAttribute="leading" secondItem="Pc7-ia-9sw" secondAttribute="leading" constant="19" id="mae-v5-8lQ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.98431372549019602" green="0.9882352941176471" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="title" destination="JNC-Ce-h8K" id="MJN-EX-GuO"/>
                                     <segue destination="h4B-s3-On1" kind="show" identifier="showL2" id="ZrR-YX-U01"/>
                                 </connections>
                             </tableViewCell>
@@ -48,15 +61,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l2Cell" rowHeight="75" id="v9N-38-Pxt">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="75"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l2Cell" rowHeight="75" id="v9N-38-Pxt" customClass="SimpleTableViewCell" customModule="Time_Application" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v9N-38-Pxt" id="5M4-j4-gcT">
                                     <frame key="frameInset" width="375" height="74.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7M-po-VWb">
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="t7M-po-VWb" firstAttribute="centerY" secondItem="5M4-j4-gcT" secondAttribute="centerY" id="7ij-ZF-qWN"/>
+                                        <constraint firstItem="t7M-po-VWb" firstAttribute="leading" secondItem="5M4-j4-gcT" secondAttribute="leading" constant="19" id="g24-PC-VrP"/>
+                                        <constraint firstAttribute="trailing" secondItem="t7M-po-VWb" secondAttribute="trailing" constant="50" id="xuF-c5-Nt4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="title" destination="t7M-po-VWb" id="ZaS-pK-fRK"/>
                                     <segue destination="WTr-iw-Uso" kind="show" identifier="showL2.1" id="odm-ho-GKQ"/>
                                 </connections>
                             </tableViewCell>
@@ -80,15 +106,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l2Cell" id="zOs-ij-ik7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l2Cell" id="zOs-ij-ik7" customClass="SimpleTableViewCell" customModule="Time_Application" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zOs-ij-ik7" id="e8P-rE-kta">
                                     <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuA-x2-GHO">
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KuA-x2-GHO" firstAttribute="centerY" secondItem="e8P-rE-kta" secondAttribute="centerY" id="huE-S3-oE0"/>
+                                        <constraint firstAttribute="trailing" secondItem="KuA-x2-GHO" secondAttribute="trailing" constant="50" id="n9o-TJ-IR1"/>
+                                        <constraint firstItem="KuA-x2-GHO" firstAttribute="leading" secondItem="e8P-rE-kta" secondAttribute="leading" constant="19" id="wqh-S7-pc0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="title" destination="KuA-x2-GHO" id="2V8-m8-dvM"/>
                                     <segue destination="wPo-Dd-Wxj" kind="show" identifier="showL2.1" id="Vap-6M-x9q"/>
                                 </connections>
                             </tableViewCell>
@@ -112,15 +151,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.9882352941176471" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l2Cell" id="PFd-Ub-Pix">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l2Cell" id="PFd-Ub-Pix" customClass="SimpleTableViewCell" customModule="Time_Application" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFd-Ub-Pix" id="G28-Bh-3aw">
                                     <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm9-cg-Shz">
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hm9-cg-Shz" firstAttribute="centerY" secondItem="G28-Bh-3aw" secondAttribute="centerY" id="BTJ-iU-UBt"/>
+                                        <constraint firstAttribute="trailing" secondItem="hm9-cg-Shz" secondAttribute="trailing" constant="50" id="f4R-kk-97w"/>
+                                        <constraint firstItem="hm9-cg-Shz" firstAttribute="leading" secondItem="G28-Bh-3aw" secondAttribute="leading" constant="19" id="fb5-Yh-g81"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="title" destination="hm9-cg-Shz" id="GfF-jP-k33"/>
                                     <segue destination="uwt-G1-lyu" kind="show" identifier="showL3" id="qO3-RR-WkR"/>
                                 </connections>
                             </tableViewCell>
@@ -144,15 +196,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l3Cell" id="MZB-PU-Mdf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l3Cell" id="MZB-PU-Mdf" customClass="SimpleTableViewCell" customModule="Time_Application" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MZB-PU-Mdf" id="KsT-LO-5qC">
                                     <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9o-Ob-Eng">
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="i9o-Ob-Eng" firstAttribute="leading" secondItem="KsT-LO-5qC" secondAttribute="leading" constant="19" id="MTM-2k-nFU"/>
+                                        <constraint firstAttribute="trailing" secondItem="i9o-Ob-Eng" secondAttribute="trailing" constant="50" id="hhf-xV-v1A"/>
+                                        <constraint firstItem="i9o-Ob-Eng" firstAttribute="centerY" secondItem="KsT-LO-5qC" secondAttribute="centerY" id="oio-zS-N72"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="title" destination="i9o-Ob-Eng" id="kk0-Qj-MyO"/>
                                     <segue destination="DoC-cv-cFP" kind="show" identifier="showL4" id="6To-wg-d3N"/>
                                 </connections>
                             </tableViewCell>
@@ -172,7 +237,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O82-S3-eOP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="hvW-rf-1SQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hvW-rf-1SQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.98431372549019602" green="0.9882352941176471" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -198,15 +263,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l4Cell" id="70g-H9-Umj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="l4Cell" id="70g-H9-Umj" customClass="SimpleTableViewCell" customModule="Time_Application" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="70g-H9-Umj" id="VzB-5x-JwS">
                                     <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYU-Wm-88M">
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OYU-Wm-88M" firstAttribute="leading" secondItem="VzB-5x-JwS" secondAttribute="leading" constant="19" id="0vr-Tn-WRi"/>
+                                        <constraint firstAttribute="trailing" secondItem="OYU-Wm-88M" secondAttribute="trailing" constant="50" id="WXm-e9-BTA"/>
+                                        <constraint firstItem="OYU-Wm-88M" firstAttribute="centerY" secondItem="VzB-5x-JwS" secondAttribute="centerY" id="wyk-KE-m41"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="title" destination="OYU-Wm-88M" id="sJB-ai-COy"/>
                                     <segue destination="Dcc-wI-fVP" kind="show" identifier="showL5" id="B5r-co-wSh"/>
                                 </connections>
                             </tableViewCell>

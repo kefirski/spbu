@@ -29,26 +29,14 @@ enum UService {
 
 extension UService: TargetType {
     var baseURL: URL {
-        switch self {
-        case .getData( _, let level):
-            if level == .l5 {
-                return URL(string: "https://spbu.xyz/TT.test")!
-            } else {
-                return URL(string: "https://spbu.xyz/TT")!
-            }
-        }
-//        return URL(string: "https://spbu.xyz/TT")!
+        return URL(string: "https://tt.rusunix.org")!
     }
     
     var path: String {
     // returns path embed with level mark (i.e. for root level with "root.json" path and .l1 level, it returns "root.json?L1")
         switch self {
             case .getData(let path, let level) :
-                if level == .l5 {
-                    return "L5.9371.json"
-                } else {
-                    return path + level.mark
-                }
+                return path + level.mark
         }
     }
     

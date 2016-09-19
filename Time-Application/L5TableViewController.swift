@@ -16,9 +16,7 @@ class L5TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI {
-            tableView.setBackgroundColor()
-        }
+        setupUI{}
         
         let target = UService.getData(path: jsonURI, onLevel: .l5)
         representation.loadDataWith(target) { result in

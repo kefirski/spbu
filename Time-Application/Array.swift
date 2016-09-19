@@ -28,7 +28,7 @@ extension Array where Element: UDataElementWithForm {
 
 
 extension Array {
-    func groupByFeature<T: Hashable, R> (_ f: @escaping (R) -> T) -> [[R]] {
+    func groupByFeature <T: Hashable, R> (_ f: @escaping (R) -> T) -> [[R]] {
         // cast [Element] to [R]
         let elements = self.map {$0 as! R}
         

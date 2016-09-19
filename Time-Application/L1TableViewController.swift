@@ -19,7 +19,6 @@ class L1TableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.setupUI {
-            tableView.setBackgroundColor()
             setupNavigationBar()
         }
         
@@ -30,30 +29,32 @@ class L1TableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return representation.data.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "l1Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "l1Cell", for: indexPath) as! SimpleTableViewCell
         cell.setBackgroundColor()
 
         let faculty = representation.data[indexPath.row] as! UDataElement
             
-        cell.textLabel?.text = faculty.title
+        cell.title.text = faculty.title
+        cell.title.textColor = UColor.greyContentColor
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return mainRowHeight
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -16,9 +16,7 @@ class L3TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI {
-            tableView.setBackgroundColor()
-        }
+        setupUI{}
         
         let target = UService.getData(path: jsonURI, onLevel: .l3)
         representation.loadDataWith(target) { result in
@@ -47,18 +45,20 @@ class L3TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "l3Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "l3Cell", for: indexPath) as! SimpleTableViewCell
         cell.setBackgroundColor()
         
         let dataElement = getDataElement(for: indexPath)
         
-        cell.textLabel?.text = dataElement.title + dataElement.form
+        cell.title.text = dataElement.title
+        cell.title.textColor = UColor.greyContentColor
+
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return mainRowHeight
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

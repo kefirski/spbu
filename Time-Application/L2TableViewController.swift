@@ -19,9 +19,7 @@ class L2TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI {
-            tableView.setBackgroundColor()
-        }
+        setupUI{}
 
         if dataFromLastLevel.isNil { // otherwise dataFromLasrLevel would be used
             let target = UService.getData(path: jsonURI, onLevel: .l2)
@@ -52,7 +50,7 @@ class L2TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "l2Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "l2Cell", for: indexPath) as! SimpleTableViewCell
         cell.setBackgroundColor()
 
 
@@ -60,7 +58,8 @@ class L2TableViewController: UITableViewController {
         let sourceData = checkSourceData()
         let dataElement = sourceData[indexPath.row]
         
-        cell.textLabel?.text = dataElement.title
+        cell.title.text = dataElement.title
+        cell.title.textColor = UColor.greyContentColor
         
         return cell
     }
@@ -89,7 +88,7 @@ class L2TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return mainRowHeight
     }
 
     func checkSourceData() -> [UDataElement] {

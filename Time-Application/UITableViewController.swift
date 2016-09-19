@@ -21,6 +21,13 @@ extension UITableViewController {
     }
     
     func setupUI(f: () -> Void) {
+        tableView.setBackgroundColor()
+        tableView.separatorColor = UColor.lightGreyContentColor
+        
         f()
+    }
+    
+    var mainRowHeight: CGFloat {
+        return 65
     }
 }
