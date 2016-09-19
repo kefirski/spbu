@@ -11,11 +11,19 @@ import SwiftyJSON
 
 class UClass {
     let location: String?
+    
     let title: String
+    let type: String?
+    
     let time: String
+    let timeBegin: String
+    let timeEnd: String
+    
     let unit: String
+    
     let TSBegin: Int
     let TSEnd: Int
+    
     let lunapark: [ULocation]
 
     init?(from json: JSON) {
@@ -27,15 +35,18 @@ class UClass {
 
         location = json["location"].string
         
-        let subject = json["subject"].string!.uppercaseFirst
+        title = json["subject"].string!.uppercaseFirst
+        
         if let subjectType = json["subjectType"].string?.uppercaseFirst {
-            title = "\(subjectType) \(subject)"
+            type = subjectType
         } else {
-            title = "\(subject)"
+            type = nil
         }
         
         let (timeBegin, timeEnd) = (json["time_begin"].string!, json["time_end"].string!)
         time = "\(timeBegin) – \(timeEnd)"
+        self.timeBegin = timeBegin
+        self.timeEnd = timeEnd
         
         unit = json["unit"].string!
         
@@ -43,5 +54,17 @@ class UClass {
         self.TSEnd = TSEnd
         
         lunapark = json["lunapark"].array!.map {ULocation(from: $0)}
+    }
+    
+    var mainTitle: String {
+        if let type = type {
+            return "\(type)\n\(title)"
+        } else {
+            return title
+        }
+    }
+    
+    var isEnded: Bool {
+        return TSEnd > Time.now ? false : true
     }
 }

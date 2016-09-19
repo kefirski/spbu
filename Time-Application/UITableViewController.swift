@@ -11,10 +11,11 @@ import UIKit
 import Result
 
 extension UITableViewController {
-    func reloadDataDependingOn(_ result: UVoidResult) -> Void {
+    func reloadDataDependingOn(_ result: UVoidResult, success: () -> Void = {}) -> Void {
         switch result {
         case .success():
             self.tableView.reloadData()
+            success()
         case .failure(_ ):
             print("error")
         }

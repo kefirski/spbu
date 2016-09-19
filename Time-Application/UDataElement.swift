@@ -56,6 +56,14 @@ class UDataElementStudyDay: UDataElement {
         super.init(from: json, withRawData: true)
         
         self.classes = self.rawData!.map {UClass(from: $0)}.flatMap {$0}
+    }
+    
+    var isEnded: Bool {
+        return TSEnd > Time.now ? false : true
+    }
+    
+    var notEnded: Bool {
+        return TSEnd > Time.now ? true : false
 
     }
 }
