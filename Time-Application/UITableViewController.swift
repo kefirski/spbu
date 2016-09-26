@@ -31,4 +31,25 @@ extension UITableViewController {
     var mainRowHeight: CGFloat {
         return 65
     }
+    
+    func setupNavigationBar() {
+        if let navigationBar = self.navigationController?.navigationBar {
+            let img = UIImage()
+            navigationBar.shadowImage = img
+            navigationBar.setBackgroundImage(img, for: .default)
+            
+            navigationBar.backgroundColor = UColor.backgroundColor
+            navigationBar.tintColor = UColor.greyContentColor
+            
+            let backItem = UIBarButtonItem()
+            backItem.title = "Назад"
+            navigationItem.backBarButtonItem = backItem
+        }
+    }
+    
+    func scrollToTop() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+    }
+
 }

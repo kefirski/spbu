@@ -14,18 +14,33 @@ class L5TableViewController: UITableViewController {
     var jsonURI: String!
     let representation = URepresentation()
     
+    var isInitial: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI {
             tableView.estimatedRowHeight = 85.0
             tableView.rowHeight = UITableViewAutomaticDimension
+            
+            setupNavigationBar()
         }
         
         let target = UService.getData(path: jsonURI, onLevel: .l5)
         representation.loadDataWith(target) { result in
-            self.reloadDataDependingOn(result) {
+            switch result {
+            case .success():
+                // if everything is ok then it is necessary to save jsonURI because this schedule have become default
+                Defaults.saveUserSchedule(URI: self.jsonURI)
+                
+                self.tableView.reloadData()
                 self.scrollToActualDay()
+                
+            case .failure(let error):
+                switch error {
+                case .dataError: Defaults.deleteUserSchedule()
+                default: break
+                }
             }
         }
     }
@@ -36,6 +51,46 @@ class L5TableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Interacting
+    
+    @IBAction func backToRootButtonPressed(_ sender: AnyObject) {
+        Defaults.deleteUserSchedule()
+        if self.isInitial {
+            performSegue(withIdentifier: "backToRoot", sender: sender)
+        } else {
+            performSegue(withIdentifier: "unwindToRoot", sender: sender)
+        }
+    }
+    
+    @IBAction func prevButtonPressed(_ sender: AnyObject) {
+        if let metadata = representation.metadata {
+            let uri = metadata.prevWeek!
+            let target = UService.getData(path: uri, onLevel: .l5)
+            updateForOtherWeek(with: target)
+        }
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: AnyObject) {
+        if let metadata = representation.metadata {
+            let uri = metadata.nextWeek!
+            let target = UService.getData(path: uri, onLevel: .l5)
+            
+            updateForOtherWeek(with: target)
+        }
+    }
+    
+    func updateForOtherWeek(with target: UService) {
+        representation.loadDataWith(target) { result in
+            switch result {
+            case .success():
+                self.tableView.reloadData()
+                self.scrollToTop()
+                
+            case .failure(_): print("error")
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -94,8 +149,6 @@ class L5TableViewController: UITableViewController {
         return 35
     }
     
-
-    
     func classesFor(day d: Int) -> [UClass] {
         let day = representation.data[d] as! UDataElementStudyDay
         return day.classes
@@ -109,6 +162,8 @@ class L5TableViewController: UITableViewController {
     func classFor(_ indexPath: IndexPath) -> UClass {
         return classFor(day: indexPath.section, index: indexPath.row)
     }
+    
+    // MARK: - Scrolling
     
     func scrollToActualDay() {
         if let indexPath = self.actualDayIndexPath {

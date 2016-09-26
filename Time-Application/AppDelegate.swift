@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setNavigationBarAppereance()
         
+        setCorrectInitialController()
+        
         return true
     }
 
@@ -51,5 +53,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], for: UIControlState())
     }
 
+    func setCorrectInitialController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let jsonURI = Defaults.getUserSchedule() {
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "L5") as! UINavigationController
+            let dest = initialViewController.topViewController as! L5TableViewController
+            
+            dest.jsonURI = jsonURI
+            dest.isInitial = true
+            
+            self.window?.rootViewController = initialViewController
+        } else {
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "root") as! UINavigationController
+            
+            self.window?.rootViewController = initialViewController
+        }
+        self.window?.makeKeyAndVisible()
+    }
 }
 

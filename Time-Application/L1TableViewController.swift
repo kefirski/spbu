@@ -66,23 +66,11 @@ class L1TableViewController: UITableViewController {
         let faculty = representation.data[indexPath.row] as! UDataElement
         
         destination.jsonURI = faculty.JSON_URI!
-        
-    }
-    
-    func setupNavigationBar() {
-        let navigationBar = self.navigationController!.navigationBar
-        let img = UIImage()
-        navigationBar.shadowImage = img
-        navigationBar.setBackgroundImage(img, for: .default)
-        
-        navigationBar.backgroundColor = UColor.backgroundColor
-        navigationBar.tintColor = UColor.greyContentColor
-        
-        let backItem = UIBarButtonItem()
-        backItem.title = "Назад"
-        navigationItem.backBarButtonItem = backItem
     }
 
+    @IBAction func unwindToRoot(segue: UIStoryboardSegue) {
+        scrollToTop()
+    }
 }
 
 

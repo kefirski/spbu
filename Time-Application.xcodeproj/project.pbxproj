@@ -14,6 +14,7 @@
 		A525EC461D8C4F9900F86E7D /* URepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC401D8C4F9900F86E7D /* URepresentation.swift */; };
 		A525EC471D8C4F9900F86E7D /* UService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC411D8C4F9900F86E7D /* UService.swift */; };
 		A525EC481D8C4F9900F86E7D /* UNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC421D8C4F9900F86E7D /* UNetworkingError.swift */; };
+		A55AEE2E1D98FDD5001E5EE1 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */; };
 		A571AC9F1D8EF7ED00CC1749 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571AC9E1D8EF7ED00CC1749 /* UIColor.swift */; };
 		A571ACA21D8EFD5D00CC1749 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571ACA11D8EFD5D00CC1749 /* Color.swift */; };
 		A582124B1D8C6F7400FB7F46 /* L2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582124A1D8C6F7400FB7F46 /* L2TableViewController.swift */; };
@@ -47,6 +48,7 @@
 		A525EC401D8C4F9900F86E7D /* URepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URepresentation.swift; sourceTree = "<group>"; };
 		A525EC411D8C4F9900F86E7D /* UService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UService.swift; sourceTree = "<group>"; };
 		A525EC421D8C4F9900F86E7D /* UNetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNetworkingError.swift; sourceTree = "<group>"; };
+		A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		A571AC9E1D8EF7ED00CC1749 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A571ACA11D8EFD5D00CC1749 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A582124A1D8C6F7400FB7F46 /* L2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L2TableViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				A5C18C4B1D90326D00F0CB5B /* Time.swift */,
+				A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55AEE2E1D98FDD5001E5EE1 /* Defaults.swift in Sources */,
 				A591FF031D8D56F4001AFFF0 /* Metadata.swift in Sources */,
 				A5C18C491D9013B800F0CB5B /* HeaderTableViewCell.swift in Sources */,
 				A571AC9F1D8EF7ED00CC1749 /* UIColor.swift in Sources */,
@@ -483,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -527,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -540,7 +544,7 @@
 			baseConfigurationReference = F50ADB54170C9DC037468392 /* Pods-Time-Application.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8JS35K8859;
 				INFOPLIST_FILE = "Time-Application/Info.plist";
@@ -559,7 +563,7 @@
 			baseConfigurationReference = A95267DDDD6C53D6F5A9FED4 /* Pods-Time-Application.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8JS35K8859;
 				INFOPLIST_FILE = "Time-Application/Info.plist";

@@ -37,7 +37,6 @@ class URepresentation {
                 case .failure(let error):
                     
                     // callback with connection error
-                    self.clearData()
                     performCallback(.failure(error))
                     
                 }
