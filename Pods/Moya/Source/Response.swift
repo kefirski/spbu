@@ -3,11 +3,13 @@ import Foundation
 public final class Response: CustomDebugStringConvertible, Equatable {
     public let statusCode: Int
     public let data: Data
+    public let request: URLRequest?
     public let response: URLResponse?
 
-    public init(statusCode: Int, data: Data, response: URLResponse? = nil) {
+    public init(statusCode: Int, data: Data, request: URLRequest? = nil, response: URLResponse? = nil) {
         self.statusCode = statusCode
         self.data = data
+        self.request = request
         self.response = response
     }
 
@@ -64,7 +66,7 @@ public extension Response {
             if data.count < 1 && !failsOnEmptyData {
                 return NSNull()
             }
-            throw Error.underlying(error as NSError)
+            throw Error.jsonMapping(self)
         }
     }
 

@@ -23,11 +23,23 @@ class ClassTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
+        let color = separator.backgroundColor
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        if(selected) {
+            separator.backgroundColor = color
+        }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        let color = separator.backgroundColor
+        super.setHighlighted(highlighted, animated: animated)
+        
+        if(highlighted) {
+            separator.backgroundColor = color
+        }
     }
 
 }

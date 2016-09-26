@@ -7,8 +7,8 @@ target ‘Time-Application’ do
   pod 'Then’,           :git => 'https://github.com/devxoul/Then.git'
   pod 'AsyncSwift',     :git => 'https://github.com/duemunk/Async.git', :branch => ‘feature/Swift_3.0’
   pod 'Alamofire',      :git => 'https://github.com/Alamofire/Alamofire.git'
-  pod 'SwiftyJSON',     :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
-  pod 'Moya',           :git => 'https://github.com/Moya/Moya.git', :branch => ‘swift-3.0’
+  pod 'SwiftyJSON',     :git => "https://github.com/SwiftyJSON/SwiftyJSON.git"
+  pod 'Moya',           :git => "https://github.com/Moya/Moya.git"
   pod 'Result',         :git => 'https://github.com/antitypical/Result.git'
 
 end

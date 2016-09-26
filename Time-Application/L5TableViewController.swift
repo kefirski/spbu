@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class L5TableViewController: UITableViewController {
+class L5TableViewController: UITableViewController, UIActionSheetDelegate {
 
     var jsonURI: String!
     let representation = URepresentation()
@@ -68,6 +68,7 @@ class L5TableViewController: UITableViewController {
         if let metadata = representation.metadata {
             let uri = metadata.prevWeek!
             let target = UService.getData(path: uri, onLevel: .l5)
+            
             updateForOtherWeek(with: target)
         }
     }
@@ -93,6 +94,7 @@ class L5TableViewController: UITableViewController {
         }
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -134,6 +136,7 @@ class L5TableViewController: UITableViewController {
         return cell
     }
     
+    
      override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "Header") as! HeaderTableViewCell
         
@@ -145,22 +148,33 @@ class L5TableViewController: UITableViewController {
         return headerCell.contentView
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let uClass = classFor(indexPath)
+        
+        if !uClass.lunapark.isEmpty {
+            showActionSheet(uClass.lunapark)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 35
     }
     
-    func classesFor(day d: Int) -> [UClass] {
-        let day = representation.data[d] as! UDataElementStudyDay
-        return day.classes
-    }
-    
-    func classFor(day d: Int, index n: Int) -> UClass {
-        let day = representation.data[d] as! UDataElementStudyDay
-        return day.classes[n]
-    }
-    
-    func classFor(_ indexPath: IndexPath) -> UClass {
-        return classFor(day: indexPath.section, index: indexPath.row)
+    func showActionSheet(_ locations: [ULocation]) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "Отмена", style: .cancel) {_ in}
+        actionSheet.addAction(cancelActionButton)
+        
+        let saveActionButton = UIAlertAction(title: "Показать на карте", style: .default) { action in
+            
+        }
+        actionSheet.addAction(saveActionButton)
+        
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     // MARK: - Scrolling
@@ -182,6 +196,22 @@ class L5TableViewController: UITableViewController {
             }
         }
         return IndexPath(row:0, section: representation.data.count - 1)
+    }
+    
+    // MARK: - Other
+    
+    func classesFor(day d: Int) -> [UClass] {
+        let day = representation.data[d] as! UDataElementStudyDay
+        return day.classes
+    }
+    
+    func classFor(day d: Int, index n: Int) -> UClass {
+        let day = representation.data[d] as! UDataElementStudyDay
+        return day.classes[n]
+    }
+    
+    func classFor(_ indexPath: IndexPath) -> UClass {
+        return classFor(day: indexPath.section, index: indexPath.row)
     }
 
 }
