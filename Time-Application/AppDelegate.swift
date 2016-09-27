@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setCorrectInitialController()
         
+        setUITableViewCellSelectionColor()
+        
         return true
     }
 
@@ -69,6 +71,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
         }
         self.window?.makeKeyAndVisible()
+    }
+    
+    func setUITableViewCellSelectionColor() {
+        let colorView = UIView()
+        colorView.backgroundColor = UColor.lightBlueContentColor
+        
+        UITableViewCell.appearance().selectedBackgroundView = colorView
     }
 }
 

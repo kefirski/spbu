@@ -15,8 +15,6 @@ class UColor {
     }
     
     static var redContentColor: UIColor {
-//        return UIColor(netHex: 0xfd363c)
-
         return UIColor(netHex: 0x3462fe)
     }
     
@@ -26,6 +24,10 @@ class UColor {
     
     static var lightGreyContentColor: UIColor {
         return UIColor(netHex: 0xe8e8e8)
+    }
+    
+    static var lightBlueContentColor: UIColor {
+        return UIColor(netHex: 0xcce6ff)
     }
 
 }

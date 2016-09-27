@@ -148,11 +148,11 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
         return headerCell.contentView
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let uClass = classFor(indexPath)
-        
+        let uClass = classFor(indexPath)    
         if !uClass.lunapark.isEmpty {
             showActionSheet(uClass.lunapark)
         }
