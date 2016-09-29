@@ -30,6 +30,7 @@
 		A5C18C491D9013B800F0CB5B /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C481D9013B800F0CB5B /* HeaderTableViewCell.swift */; };
 		A5C18C4C1D90326D00F0CB5B /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C4B1D90326D00F0CB5B /* Time.swift */; };
 		A5CB38921D8E8A170003DB74 /* L4TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB38911D8E8A170003DB74 /* L4TableViewController.swift */; };
+		A5DC349B1D9C46EC0099F965 /* URLOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC349A1D9C46EC0099F965 /* URLOpen.swift */; };
 		A5E3C2CF1D8E9B4B004C28E0 /* UClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2CE1D8E9B4B004C28E0 /* UClass.swift */; };
 		A5E3C2D11D8EA170004C28E0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2D01D8EA170004C28E0 /* String.swift */; };
 		A5E3C2D31D8EAA4C004C28E0 /* ULocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2D21D8EAA4C004C28E0 /* ULocation.swift */; };
@@ -65,6 +66,7 @@
 		A5C18C481D9013B800F0CB5B /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		A5C18C4B1D90326D00F0CB5B /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		A5CB38911D8E8A170003DB74 /* L4TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L4TableViewController.swift; sourceTree = "<group>"; };
+		A5DC349A1D9C46EC0099F965 /* URLOpen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLOpen.swift; sourceTree = "<group>"; };
 		A5E3C2CE1D8E9B4B004C28E0 /* UClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UClass.swift; sourceTree = "<group>"; };
 		A5E3C2D01D8EA170004C28E0 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A5E3C2D21D8EAA4C004C28E0 /* ULocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULocation.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				A5C18C4B1D90326D00F0CB5B /* Time.swift */,
 				A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */,
+				A5DC349A1D9C46EC0099F965 /* URLOpen.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				A5E3C2D51D8EB9B9004C28E0 /* L5TableViewController.swift in Sources */,
 				A582124B1D8C6F7400FB7F46 /* L2TableViewController.swift in Sources */,
 				A591FEFE1D8D39FE001AFFF0 /* UITableViewController.swift in Sources */,
+				A5DC349B1D9C46EC0099F965 /* URLOpen.swift in Sources */,
 				A5E3C2D31D8EAA4C004C28E0 /* ULocation.swift in Sources */,
 				A525EC441D8C4F9900F86E7D /* L1TableViewController.swift in Sources */,
 				A591FF051D8D5902001AFFF0 /* Array.swift in Sources */,

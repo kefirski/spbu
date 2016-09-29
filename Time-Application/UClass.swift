@@ -19,7 +19,7 @@ class UClass {
     let timeBegin: String
     let timeEnd: String
     
-    let unit: String
+    let unit: String?
     
     let TSBegin: Int
     let TSEnd: Int
@@ -48,7 +48,7 @@ class UClass {
         self.timeBegin = timeBegin
         self.timeEnd = timeEnd
         
-        unit = json["unit"].string!
+        unit = json["unit"].string
         
         self.TSBegin = TSBegin
         self.TSEnd = TSEnd
@@ -61,6 +61,14 @@ class UClass {
             return "\(type)\n\(title)"
         } else {
             return title
+        }
+    }
+    
+    var mainDescription: String? {
+        if let unit = unit {
+            return "\(unit)\n\(location.getOr(else: ""))"
+        } else {
+            return location
         }
     }
     

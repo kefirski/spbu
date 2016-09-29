@@ -9,22 +9,18 @@
 import Foundation
 import SwiftyJSON
 
-typealias ULLPair = (Double, Double)
-
 class ULocation {
     
     let title: String
     let latitude: Double
     let longitude: Double
+    let unit: String
     
     init(from json: JSON) {
         title = json["location"].string!
         latitude = json["latitude"].double!
         longitude = json["longitude"].double!
-    }
-    
-    func llPair() -> ULLPair {
-        return (latitude, longitude)
+        unit = json["unit"].string!
     }
     
 }

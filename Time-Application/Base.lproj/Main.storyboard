@@ -348,17 +348,17 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Z4I-vr-XEd" secondAttribute="trailing" constant="50" id="0yl-BP-Yr3"/>
+                                        <constraint firstAttribute="trailing" secondItem="Z4I-vr-XEd" secondAttribute="trailing" constant="35" id="0yl-BP-Yr3"/>
                                         <constraint firstItem="5RC-Da-ZMo" firstAttribute="top" secondItem="2jn-jY-LA9" secondAttribute="top" constant="17" id="672-1l-QYu"/>
                                         <constraint firstItem="ckd-U2-BYt" firstAttribute="leading" secondItem="2jn-jY-LA9" secondAttribute="leading" constant="19" id="88U-x8-A1H"/>
                                         <constraint firstItem="nyB-tB-7PY" firstAttribute="top" secondItem="2jn-jY-LA9" secondAttribute="top" constant="11" id="C7s-l5-ux6"/>
                                         <constraint firstItem="5RC-Da-ZMo" firstAttribute="leading" secondItem="nyB-tB-7PY" secondAttribute="trailing" constant="9" id="Gq5-4l-4md"/>
                                         <constraint firstAttribute="bottom" secondItem="Z4I-vr-XEd" secondAttribute="bottom" constant="18" id="J7b-Wv-kWW"/>
-                                        <constraint firstAttribute="trailing" secondItem="5RC-Da-ZMo" secondAttribute="trailing" constant="50" id="JsM-9i-v5i"/>
+                                        <constraint firstAttribute="trailing" secondItem="5RC-Da-ZMo" secondAttribute="trailing" constant="20" id="JsM-9i-v5i"/>
                                         <constraint firstAttribute="bottom" secondItem="nyB-tB-7PY" secondAttribute="bottom" constant="11" id="Yc3-x1-dzK"/>
                                         <constraint firstItem="nyB-tB-7PY" firstAttribute="leading" secondItem="2jn-jY-LA9" secondAttribute="leading" constant="60" id="dUK-ro-A4y"/>
                                         <constraint firstItem="ckd-U2-BYt" firstAttribute="centerY" secondItem="2jn-jY-LA9" secondAttribute="centerY" id="eD0-SV-2Fp"/>
-                                        <constraint firstItem="Z4I-vr-XEd" firstAttribute="top" secondItem="5RC-Da-ZMo" secondAttribute="bottom" constant="7" id="j09-GO-ABE"/>
+                                        <constraint firstItem="Z4I-vr-XEd" firstAttribute="top" secondItem="5RC-Da-ZMo" secondAttribute="bottom" constant="4" id="j09-GO-ABE"/>
                                         <constraint firstItem="Z4I-vr-XEd" firstAttribute="leading" secondItem="nyB-tB-7PY" secondAttribute="trailing" constant="9" id="jqd-xg-t34"/>
                                     </constraints>
                                 </tableViewCellContentView>

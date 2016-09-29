@@ -117,7 +117,7 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
         cell.title.text = uClass.mainTitle
         
         
-        if let location = uClass.location {
+        if let location = uClass.mainDescription {
             cell.location.text = location
         } else {
             cell.location.isHidden = true
@@ -163,15 +163,17 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
     }
     
     func showActionSheet(_ locations: [ULocation]) {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Показать на карте", message: nil, preferredStyle: .actionSheet)
         
-        let cancelActionButton = UIAlertAction(title: "Отмена", style: .cancel) {_ in}
+        let cancelActionButton = UIAlertAction(title: "Отмена", style: .cancel)
         actionSheet.addAction(cancelActionButton)
         
-        let saveActionButton = UIAlertAction(title: "Показать на карте", style: .default) { action in
-            
+        for location in locations {
+            let saveActionButton = UIAlertAction(title: location.title, style: .default) { action in
+                Open.map(on: location)
+            }
+            actionSheet.addAction(saveActionButton)
         }
-        actionSheet.addAction(saveActionButton)
         
         
         self.present(actionSheet, animated: true, completion: nil)

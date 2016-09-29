@@ -19,6 +19,15 @@ extension Optional {
         }
     }
  
+    func getOr(else elseVal: Wrapped) -> Wrapped {
+        switch self {
+        case .some(let value):
+            return value
+        case .none:
+            return elseVal
+        }
+    }
+    
 //    func recover<T>(or: T) -> T {
 //        switch self {
 //        case .some(let value):
