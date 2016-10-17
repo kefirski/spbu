@@ -10,15 +10,15 @@ import Foundation
 
 extension Optional {
     
-    var isNil: Bool {
-        switch self {
-        case .some( _):
-            return false
-        case .none:
-            return true
-        }
-    }
- 
+//    var isNil: Bool {
+//        switch self {
+//        case .some( _):
+//            return false
+//        case .none:
+//            return true
+//        }
+//    }
+// 
     func getOr(else elseVal: Wrapped) -> Wrapped {
         switch self {
         case .some(let value):

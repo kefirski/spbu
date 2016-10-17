@@ -21,7 +21,7 @@ class L2TableViewController: UITableViewController {
         
         setupUI()
 
-        if dataFromLastLevel.isNil { // otherwise dataFromLasrLevel would be used
+        if dataFromLastLevel == nil { // otherwise dataFromLasrLevel would be used
             let target = UService.getData(path: jsonURI, onLevel: .l2)
             representation.loadDataWith(target, rawData: true) { result in
                 self.reloadDataDependingOn(result)
