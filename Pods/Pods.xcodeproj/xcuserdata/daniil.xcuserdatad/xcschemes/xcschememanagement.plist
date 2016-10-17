@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-TodayTimeApplication.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,6 +47,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>200C58EA47B153CC4B36D9B8340DEE91</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>414922226078A916E44883470BFFC26F</key>
 		<dict>
 			<key>primary</key>

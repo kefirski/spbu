@@ -16,7 +16,7 @@ class L3TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI{}
+        setupUI()
         
         let target = UService.getData(path: jsonURI, onLevel: .l3)
         representation.loadDataWith(target) { result in

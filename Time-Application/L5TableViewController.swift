@@ -113,10 +113,7 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
         
         cell.timeBegin.text = uClass.timeBegin
         cell.timeEnd.text = uClass.timeEnd
-        
         cell.title.text = uClass.mainTitle
-        
-        
         if let location = uClass.mainDescription {
             cell.location.text = location
         } else {
@@ -131,6 +128,10 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
             cell.separator.backgroundColor = UColor.lightGreyContentColor
         } else {
             cell.separator.backgroundColor = UColor.redContentColor
+        }
+        
+        if uClass.lunapark.isEmpty {
+            cell.accessoryType = .none
         }
         
         return cell

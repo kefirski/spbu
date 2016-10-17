@@ -11,14 +11,21 @@ import UIKit
 
 class Open {
     fileprivate static func yandexMap(on location: ULocation) {
-//        let url = URL(string: "yandexmaps://maps.yandex.ru/?ll=\(location.longitude),\(location.latitude)&z=16")!
         let url = URL(string: "yandexmaps://maps.yandex.ru/?pt=\(location.longitude),\(location.latitude)&z=16&l=map")!
-        UIApplication.shared.open(url)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     fileprivate static func appstoreYandex() {
         let url = URL(string: "https://itunes.apple.com/ru/app/yandex.maps/id313877526?mt=8")!
-        UIApplication.shared.open(url)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     static func map(on location: ULocation) {

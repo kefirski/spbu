@@ -19,7 +19,7 @@ class L2TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI{}
+        setupUI()
 
         if dataFromLastLevel.isNil { // otherwise dataFromLasrLevel would be used
             let target = UService.getData(path: jsonURI, onLevel: .l2)

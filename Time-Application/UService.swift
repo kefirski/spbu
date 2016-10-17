@@ -13,13 +13,11 @@ import Alamofire
 
 enum ULevel: Int {
     // represents level of timetable (i.e. root level is .l1)
-    case l1 = 1, l2, l3, l4, l5
+    case l1 = 1, l2, l3, l4, l5, widget
     
     // returns level mark (i.e for level .l1 returns "?L1")
     var mark: String {
-//        return "\\u{3F}" + "L\(self.rawValue)"
-        return ""
-
+        return "\(self.rawValue)"
     }
 }
 
@@ -36,8 +34,8 @@ extension UService: TargetType {
     var path: String {
     // returns path embed with level mark (i.e. for root level with "root.json" path and .l1 level, it returns "root.json?L1")
         switch self {
-            case .getData(let path, let level) :
-                return path + level.mark
+            case .getData(let path, _) :
+                return path
         }
     }
     
@@ -46,7 +44,10 @@ extension UService: TargetType {
     }
     
     var parameters: [String: Any]? {
-        return nil
+        switch self {
+        case .getData( _, let level) :
+            return ["level": level.mark]
+        }
     }
     
     var sampleData: Data {

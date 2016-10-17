@@ -16,12 +16,19 @@ extension UITableViewController {
         case .success():
             self.tableView.reloadData()
             success()
-        case .failure(_ ):
+        case .failure(let error):
             print("error")
+            switch error {
+                case .dataError: print("data error")
+                case .networkFailure: print("network error")
+                case .responseCodeError: print("response error")
+            }
         }
+        
+        self.refreshControl?.endRefreshing()
     }
     
-    func setupUI(f: () -> Void) {
+    func setupUI(f: () -> Void = {}) {
         tableView.setBackgroundColor()
         tableView.separatorColor = UColor.lightGreyContentColor
         
@@ -51,5 +58,4 @@ extension UITableViewController {
         let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
     }
-
 }

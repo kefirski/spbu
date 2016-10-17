@@ -25,17 +25,18 @@ class URepresentation {
         
         // UVoidClojure is discribed in UResult file
         
+        self.clearData()
+        
         switch target {
         case .getData(_, let level):
             networkingBrain.loadDataWith(target) { result in
                 switch result {
                 case .success(let data):
-                    
+                    // fill data and metadata from json
                     let rawJSON = JSON(data: data)
                     self.fillData(with: rawJSON, dependingOn: level, using: rawData, andThen: performCallback)
                     
                 case .failure(let error):
-                    
                     // callback with connection error
                     performCallback(.failure(error))
                     
@@ -63,7 +64,6 @@ class URepresentation {
         self._metadata = Metadata(from: metadataJSON)
         
         guard dataJSON.exists() else {
-            self.clearData()
             performCallback(.failure(.dataError))
             return
         }
@@ -81,7 +81,7 @@ class URepresentation {
             }
             self._data = rawData.groupByForm()
             
-        case .l5:
+        case .l5, .widget:
             self._data = jsons.flatMap { item in
                 return UDataElementStudyDay(from: item)
             }

@@ -8,13 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		04C0F8F59333AFE828D38887 /* Pods_Time_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469C4DBEE2E774E3C1106DC3 /* Pods_Time_Application.framework */; };
+		549B1B721BC96CB40441D7D9 /* Pods_TodayTimeApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C9439BC70BE394941CAD81 /* Pods_TodayTimeApplication.framework */; };
+		A50777DF1DABECB4004A02D6 /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50777DE1DABECB4004A02D6 /* TodayTableViewController.swift */; };
+		A50777E01DABEFDC004A02D6 /* UNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC3F1D8C4F9900F86E7D /* UNetworking.swift */; };
+		A50777E11DABEFDC004A02D6 /* UNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC421D8C4F9900F86E7D /* UNetworkingError.swift */; };
+		A50777E21DABEFDC004A02D6 /* UService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC411D8C4F9900F86E7D /* UService.swift */; };
+		A50777E31DABEFDC004A02D6 /* UDataElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC3D1D8C4F9900F86E7D /* UDataElement.swift */; };
+		A50777E41DABEFDC004A02D6 /* UClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2CE1D8E9B4B004C28E0 /* UClass.swift */; };
+		A50777E51DABEFDC004A02D6 /* ULocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2D21D8EAA4C004C28E0 /* ULocation.swift */; };
+		A50777E61DABEFDC004A02D6 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF021D8D56F4001AFFF0 /* Metadata.swift */; };
+		A50777E71DABEFDC004A02D6 /* UResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF001D8D3B12001AFFF0 /* UResult.swift */; };
+		A50777E81DABEFDC004A02D6 /* URepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC401D8C4F9900F86E7D /* URepresentation.swift */; };
+		A50777E91DABEFDC004A02D6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571ACA11D8EFD5D00CC1749 /* Color.swift */; };
+		A50777EA1DABEFDC004A02D6 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C4B1D90326D00F0CB5B /* Time.swift */; };
+		A50777EB1DABEFDC004A02D6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */; };
+		A50777ED1DABEFDC004A02D6 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582124D1D8C798800FB7F46 /* Optional.swift */; };
+		A50777EE1DABEFDC004A02D6 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56590281D9D5C4000E2E5B6 /* Updatable.swift */; };
+		A50777EF1DABEFDC004A02D6 /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FEFD1D8D39FE001AFFF0 /* UITableViewController.swift */; };
+		A50777F01DABEFDC004A02D6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571AC9E1D8EF7ED00CC1749 /* UIColor.swift */; };
+		A50777F11DABEFDC004A02D6 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59AE1E01D8D21AD0060A17F /* Async.swift */; };
+		A50777F21DABEFDC004A02D6 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF041D8D5902001AFFF0 /* Array.swift */; };
+		A50777F31DABEFDC004A02D6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2D01D8EA170004C28E0 /* String.swift */; };
 		A525EC431D8C4F9900F86E7D /* UDataElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC3D1D8C4F9900F86E7D /* UDataElement.swift */; };
 		A525EC441D8C4F9900F86E7D /* L1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC3E1D8C4F9900F86E7D /* L1TableViewController.swift */; };
 		A525EC451D8C4F9900F86E7D /* UNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC3F1D8C4F9900F86E7D /* UNetworking.swift */; };
 		A525EC461D8C4F9900F86E7D /* URepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC401D8C4F9900F86E7D /* URepresentation.swift */; };
 		A525EC471D8C4F9900F86E7D /* UService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC411D8C4F9900F86E7D /* UService.swift */; };
 		A525EC481D8C4F9900F86E7D /* UNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC421D8C4F9900F86E7D /* UNetworkingError.swift */; };
+		A5337E8F1DABE66B00B1851B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5337E8E1DABE66B00B1851B /* NotificationCenter.framework */; };
+		A5337E951DABE66B00B1851B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5337E931DABE66B00B1851B /* MainInterface.storyboard */; };
+		A5337E991DABE66B00B1851B /* TodayTimeApplication.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A5337E8D1DABE66B00B1851B /* TodayTimeApplication.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A54A09961DABF99D0037D5BF /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C401D8FC8FA00F0CB5B /* SimpleTableViewCell.swift */; };
+		A54A09971DABF99D0037D5BF /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C481D9013B800F0CB5B /* HeaderTableViewCell.swift */; };
+		A54A09981DABF99D0037D5BF /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C421D8FEE3C00F0CB5B /* ClassTableViewCell.swift */; };
 		A55AEE2E1D98FDD5001E5EE1 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */; };
+		A56590291D9D5C4000E2E5B6 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56590281D9D5C4000E2E5B6 /* Updatable.swift */; };
 		A571AC9F1D8EF7ED00CC1749 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571AC9E1D8EF7ED00CC1749 /* UIColor.swift */; };
 		A571ACA21D8EFD5D00CC1749 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571ACA11D8EFD5D00CC1749 /* Color.swift */; };
 		A582124B1D8C6F7400FB7F46 /* L2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582124A1D8C6F7400FB7F46 /* L2TableViewController.swift */; };
@@ -41,15 +69,50 @@
 		A5F7ED851D8C4EEF00F4E5B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F7ED831D8C4EEF00F4E5B2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A5337E971DABE66B00B1851B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5F7ED6F1D8C4EEF00F4E5B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5337E8C1DABE66B00B1851B;
+			remoteInfo = TodayTimeApplication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A5337E9D1DABE66B00B1851B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A5337E991DABE66B00B1851B /* TodayTimeApplication.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		36C9439BC70BE394941CAD81 /* Pods_TodayTimeApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayTimeApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		469C4DBEE2E774E3C1106DC3 /* Pods_Time_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51C723DECEE47AD12671B9FF /* Pods-TodayTimeApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayTimeApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayTimeApplication/Pods-TodayTimeApplication.debug.xcconfig"; sourceTree = "<group>"; };
+		A50777DD1DABECB3004A02D6 /* TodayTimeApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodayTimeApplication-Bridging-Header.h"; sourceTree = "<group>"; };
+		A50777DE1DABECB4004A02D6 /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 		A525EC3D1D8C4F9900F86E7D /* UDataElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDataElement.swift; sourceTree = "<group>"; };
 		A525EC3E1D8C4F9900F86E7D /* L1TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L1TableViewController.swift; sourceTree = "<group>"; };
 		A525EC3F1D8C4F9900F86E7D /* UNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNetworking.swift; sourceTree = "<group>"; };
 		A525EC401D8C4F9900F86E7D /* URepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URepresentation.swift; sourceTree = "<group>"; };
 		A525EC411D8C4F9900F86E7D /* UService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UService.swift; sourceTree = "<group>"; };
 		A525EC421D8C4F9900F86E7D /* UNetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNetworkingError.swift; sourceTree = "<group>"; };
+		A5337E881DABE4B400B1851B /* Time-Application.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Time-Application.entitlements"; sourceTree = "<group>"; };
+		A5337E8D1DABE66B00B1851B /* TodayTimeApplication.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayTimeApplication.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5337E8E1DABE66B00B1851B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		A5337E941DABE66B00B1851B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A5337E961DABE66B00B1851B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A54A09951DABF4810037D5BF /* TodayTimeApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayTimeApplication.entitlements; sourceTree = "<group>"; };
 		A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		A56590281D9D5C4000E2E5B6 /* Updatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updatable.swift; sourceTree = "<group>"; };
 		A571AC9E1D8EF7ED00CC1749 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A571ACA11D8EFD5D00CC1749 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A582124A1D8C6F7400FB7F46 /* L2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L2TableViewController.swift; sourceTree = "<group>"; };
@@ -78,10 +141,20 @@
 		A5F7ED841D8C4EEF00F4E5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5F7ED861D8C4EEF00F4E5B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A95267DDDD6C53D6F5A9FED4 /* Pods-Time-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time-Application.release.xcconfig"; path = "Pods/Target Support Files/Pods-Time-Application/Pods-Time-Application.release.xcconfig"; sourceTree = "<group>"; };
+		E24A63B01E6178219ACF849B /* Pods-TodayTimeApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayTimeApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayTimeApplication/Pods-TodayTimeApplication.release.xcconfig"; sourceTree = "<group>"; };
 		F50ADB54170C9DC037468392 /* Pods-Time-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time-Application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Time-Application/Pods-Time-Application.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A5337E8A1DABE66B00B1851B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5337E8F1DABE66B00B1851B /* NotificationCenter.framework in Frameworks */,
+				549B1B721BC96CB40441D7D9 /* Pods_TodayTimeApplication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5F7ED741D8C4EEF00F4E5B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				469C4DBEE2E774E3C1106DC3 /* Pods_Time_Application.framework */,
+				A5337E8E1DABE66B00B1851B /* NotificationCenter.framework */,
+				36C9439BC70BE394941CAD81 /* Pods_TodayTimeApplication.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,8 +188,21 @@
 		A52D84741D8F13720019BC80 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				A56590281D9D5C4000E2E5B6 /* Updatable.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		A5337E901DABE66B00B1851B /* TodayTimeApplication */ = {
+			isa = PBXGroup;
+			children = (
+				A54A09951DABF4810037D5BF /* TodayTimeApplication.entitlements */,
+				A5337E931DABE66B00B1851B /* MainInterface.storyboard */,
+				A50777DE1DABECB4004A02D6 /* TodayTableViewController.swift */,
+				A5337E961DABE66B00B1851B /* Info.plist */,
+				A50777DD1DABECB3004A02D6 /* TodayTimeApplication-Bridging-Header.h */,
+			);
+			path = TodayTimeApplication;
 			sourceTree = "<group>";
 		};
 		A571ACA01D8EFD4B00CC1749 /* UI */ = {
@@ -230,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				A5F7ED791D8C4EEF00F4E5B2 /* Time-Application */,
+				A5337E901DABE66B00B1851B /* TodayTimeApplication */,
 				A5F7ED781D8C4EEF00F4E5B2 /* Products */,
 				B18A5BF46028D322F095CF58 /* Pods */,
 				5AE3BEAE394B09E63427BB1A /* Frameworks */,
@@ -240,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				A5F7ED771D8C4EEF00F4E5B2 /* Time-Application.app */,
+				A5337E8D1DABE66B00B1851B /* TodayTimeApplication.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,6 +337,7 @@
 		A5F7ED791D8C4EEF00F4E5B2 /* Time-Application */ = {
 			isa = PBXGroup;
 			children = (
+				A5337E881DABE4B400B1851B /* Time-Application.entitlements */,
 				A5F7ED7A1D8C4EEF00F4E5B2 /* AppDelegate.swift */,
 				A5CB388A1D8E84CE0003DB74 /* Model */,
 				A5CB388C1D8E85050003DB74 /* Representation */,
@@ -268,6 +359,8 @@
 			children = (
 				F50ADB54170C9DC037468392 /* Pods-Time-Application.debug.xcconfig */,
 				A95267DDDD6C53D6F5A9FED4 /* Pods-Time-Application.release.xcconfig */,
+				51C723DECEE47AD12671B9FF /* Pods-TodayTimeApplication.debug.xcconfig */,
+				E24A63B01E6178219ACF849B /* Pods-TodayTimeApplication.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -275,6 +368,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A5337E8C1DABE66B00B1851B /* TodayTimeApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5337E9A1DABE66B00B1851B /* Build configuration list for PBXNativeTarget "TodayTimeApplication" */;
+			buildPhases = (
+				0E4E648D83B4BD3138412817 /* [CP] Check Pods Manifest.lock */,
+				A5337E891DABE66B00B1851B /* Sources */,
+				A5337E8A1DABE66B00B1851B /* Frameworks */,
+				A5337E8B1DABE66B00B1851B /* Resources */,
+				004A22F65FF0E4D5B8B05B88 /* [CP] Embed Pods Frameworks */,
+				A7164D6A0CC25D8D0B9AA728 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayTimeApplication;
+			productName = TodayTimeApplication;
+			productReference = A5337E8D1DABE66B00B1851B /* TodayTimeApplication.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		A5F7ED761D8C4EEF00F4E5B2 /* Time-Application */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5F7ED891D8C4EEF00F4E5B2 /* Build configuration list for PBXNativeTarget "Time-Application" */;
@@ -285,10 +398,12 @@
 				A5F7ED751D8C4EEF00F4E5B2 /* Resources */,
 				978E93D81F955F82F9A2EC65 /* [CP] Embed Pods Frameworks */,
 				A975E6260D19580BC051FD83 /* [CP] Copy Pods Resources */,
+				A5337E9D1DABE66B00B1851B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A5337E981DABE66B00B1851B /* PBXTargetDependency */,
 			);
 			name = "Time-Application";
 			productName = "Time-Application";
@@ -305,11 +420,27 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Daniil Gavrilov";
 				TargetAttributes = {
+					A5337E8C1DABE66B00B1851B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8JS35K8859;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					A5F7ED761D8C4EEF00F4E5B2 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8JS35K8859;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -327,11 +458,20 @@
 			projectRoot = "";
 			targets = (
 				A5F7ED761D8C4EEF00F4E5B2 /* Time-Application */,
+				A5337E8C1DABE66B00B1851B /* TodayTimeApplication */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A5337E8B1DABE66B00B1851B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5337E951DABE66B00B1851B /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5F7ED751D8C4EEF00F4E5B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +485,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		004A22F65FF0E4D5B8B05B88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayTimeApplication/Pods-TodayTimeApplication-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E4E648D83B4BD3138412817 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		978E93D81F955F82F9A2EC65 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +528,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Time-Application/Pods-Time-Application-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7164D6A0CC25D8D0B9AA728 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayTimeApplication/Pods-TodayTimeApplication-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A975E6260D19580BC051FD83 /* [CP] Copy Pods Resources */ = {
@@ -393,6 +578,36 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A5337E891DABE66B00B1851B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A54A09961DABF99D0037D5BF /* SimpleTableViewCell.swift in Sources */,
+				A54A09971DABF99D0037D5BF /* HeaderTableViewCell.swift in Sources */,
+				A54A09981DABF99D0037D5BF /* ClassTableViewCell.swift in Sources */,
+				A50777E01DABEFDC004A02D6 /* UNetworking.swift in Sources */,
+				A50777E11DABEFDC004A02D6 /* UNetworkingError.swift in Sources */,
+				A50777E21DABEFDC004A02D6 /* UService.swift in Sources */,
+				A50777E31DABEFDC004A02D6 /* UDataElement.swift in Sources */,
+				A50777E41DABEFDC004A02D6 /* UClass.swift in Sources */,
+				A50777E51DABEFDC004A02D6 /* ULocation.swift in Sources */,
+				A50777E61DABEFDC004A02D6 /* Metadata.swift in Sources */,
+				A50777E71DABEFDC004A02D6 /* UResult.swift in Sources */,
+				A50777E81DABEFDC004A02D6 /* URepresentation.swift in Sources */,
+				A50777E91DABEFDC004A02D6 /* Color.swift in Sources */,
+				A50777EA1DABEFDC004A02D6 /* Time.swift in Sources */,
+				A50777EB1DABEFDC004A02D6 /* Defaults.swift in Sources */,
+				A50777ED1DABEFDC004A02D6 /* Optional.swift in Sources */,
+				A50777EE1DABEFDC004A02D6 /* Updatable.swift in Sources */,
+				A50777EF1DABEFDC004A02D6 /* UITableViewController.swift in Sources */,
+				A50777F01DABEFDC004A02D6 /* UIColor.swift in Sources */,
+				A50777F11DABEFDC004A02D6 /* Async.swift in Sources */,
+				A50777F21DABEFDC004A02D6 /* Array.swift in Sources */,
+				A50777F31DABEFDC004A02D6 /* String.swift in Sources */,
+				A50777DF1DABECB4004A02D6 /* TodayTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5F7ED731D8C4EEF00F4E5B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,6 +629,7 @@
 				A5E3C2D31D8EAA4C004C28E0 /* ULocation.swift in Sources */,
 				A525EC441D8C4F9900F86E7D /* L1TableViewController.swift in Sources */,
 				A591FF051D8D5902001AFFF0 /* Array.swift in Sources */,
+				A56590291D9D5C4000E2E5B6 /* Updatable.swift in Sources */,
 				A571ACA21D8EFD5D00CC1749 /* Color.swift in Sources */,
 				A525EC451D8C4F9900F86E7D /* UNetworking.swift in Sources */,
 				A525EC481D8C4F9900F86E7D /* UNetworkingError.swift in Sources */,
@@ -430,7 +646,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A5337E981DABE66B00B1851B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5337E8C1DABE66B00B1851B /* TodayTimeApplication */;
+			targetProxy = A5337E971DABE66B00B1851B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		A5337E931DABE66B00B1851B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5337E941DABE66B00B1851B /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		A5F7ED7E1D8C4EEF00F4E5B2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -450,6 +682,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A5337E9B1DABE66B00B1851B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51C723DECEE47AD12671B9FF /* Pods-TodayTimeApplication.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TodayTimeApplication/TodayTimeApplication.entitlements;
+				DEVELOPMENT_TEAM = 8JS35K8859;
+				INFOPLIST_FILE = TodayTimeApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Gavrilov.Time-Application.TodayTimeApplication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TodayTimeApplication/TodayTimeApplication-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A5337E9C1DABE66B00B1851B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E24A63B01E6178219ACF849B /* Pods-TodayTimeApplication.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TodayTimeApplication/TodayTimeApplication.entitlements;
+				DEVELOPMENT_TEAM = 8JS35K8859;
+				INFOPLIST_FILE = TodayTimeApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Gavrilov.Time-Application.TodayTimeApplication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TodayTimeApplication/TodayTimeApplication-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		A5F7ED871D8C4EEF00F4E5B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -491,7 +760,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -535,7 +804,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -550,9 +819,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Time-Application/Time-Application.entitlements";
 				DEVELOPMENT_TEAM = 8JS35K8859;
 				INFOPLIST_FILE = "Time-Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Gavrilov.Time-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -569,9 +839,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Time-Application/Time-Application.entitlements";
 				DEVELOPMENT_TEAM = 8JS35K8859;
 				INFOPLIST_FILE = "Time-Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Gavrilov.Time-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -583,6 +854,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A5337E9A1DABE66B00B1851B /* Build configuration list for PBXNativeTarget "TodayTimeApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5337E9B1DABE66B00B1851B /* Debug */,
+				A5337E9C1DABE66B00B1851B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A5F7ED721D8C4EEF00F4E5B2 /* Build configuration list for PBXProject "Time-Application" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

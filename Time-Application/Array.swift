@@ -26,6 +26,23 @@ extension Array where Element: UDataElementWithForm {
     }
 }
 
+extension Array where Element: UDataElementStudyDay {
+    
+    func actualDay() -> UDataElementStudyDay? {
+        
+        guard !self.isEmpty else {return nil}
+        
+        for day in self {
+            if day.notEnded {
+                return day
+            }
+        }
+        
+        return self.last
+    }
+    
+}
+
 
 extension Array {
     func groupByFeature <T: Hashable, R> (_ f: @escaping (R) -> T) -> [[R]] {

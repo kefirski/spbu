@@ -1,8 +1,7 @@
 platform :ios, ‘9.3’
 
 
-target ‘Time-Application’ do
-
+def sharedPods 
   use_frameworks!
   pod 'Then’,           :git => 'https://github.com/devxoul/Then.git'
   pod 'AsyncSwift',     :git => 'https://github.com/duemunk/Async.git', :branch => ‘feature/Swift_3.0’
@@ -10,7 +9,14 @@ target ‘Time-Application’ do
   pod 'SwiftyJSON',     :git => "https://github.com/SwiftyJSON/SwiftyJSON.git"
   pod 'Moya',           :git => "https://github.com/Moya/Moya.git"
   pod 'Result',         :git => 'https://github.com/antitypical/Result.git'
+end
 
+target ‘Time-Application’ do 
+  sharedPods
+end
+
+target ‘TodayTimeApplication’ do
+  sharedPods
 end
 
 post_install do |installer|

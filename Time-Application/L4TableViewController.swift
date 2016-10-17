@@ -16,7 +16,7 @@ class L4TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI{}
+        setupUI()
         
         let target = UService.getData(path: jsonURI, onLevel: .l4)
         representation.loadDataWith(target) { result in

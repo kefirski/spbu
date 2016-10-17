@@ -22,6 +22,10 @@ class L1TableViewController: UITableViewController {
             setupNavigationBar()
         }
         
+        update()
+    }
+    
+    func update() {
         representation.loadDataWith(target) { result in
             self.reloadDataDependingOn(result)
         }
