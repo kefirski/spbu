@@ -29,7 +29,6 @@
 		A50777F11DABEFDC004A02D6 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59AE1E01D8D21AD0060A17F /* Async.swift */; };
 		A50777F21DABEFDC004A02D6 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF041D8D5902001AFFF0 /* Array.swift */; };
 		A50777F31DABEFDC004A02D6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2D01D8EA170004C28E0 /* String.swift */; };
-		A51C9ABC1DB4F02300757543 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A51C9ABB1DB4F02300757543 /* README.md */; };
 		A525EC431D8C4F9900F86E7D /* UDataElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC3D1D8C4F9900F86E7D /* UDataElement.swift */; };
 		A525EC441D8C4F9900F86E7D /* L1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC3E1D8C4F9900F86E7D /* L1TableViewController.swift */; };
 		A525EC451D8C4F9900F86E7D /* UNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC3F1D8C4F9900F86E7D /* UNetworking.swift */; };
@@ -100,7 +99,6 @@
 		51C723DECEE47AD12671B9FF /* Pods-TodayTimeApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayTimeApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayTimeApplication/Pods-TodayTimeApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		A50777DD1DABECB3004A02D6 /* TodayTimeApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodayTimeApplication-Bridging-Header.h"; sourceTree = "<group>"; };
 		A50777DE1DABECB4004A02D6 /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
-		A51C9ABB1DB4F02300757543 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "Time-Application/README.md"; sourceTree = "<group>"; };
 		A525EC3D1D8C4F9900F86E7D /* UDataElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDataElement.swift; sourceTree = "<group>"; };
 		A525EC3E1D8C4F9900F86E7D /* L1TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L1TableViewController.swift; sourceTree = "<group>"; };
 		A525EC3F1D8C4F9900F86E7D /* UNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNetworking.swift; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 			children = (
 				A5F7ED791D8C4EEF00F4E5B2 /* Time-Application */,
 				A5337E901DABE66B00B1851B /* TodayTimeApplication */,
-				A51C9ABB1DB4F02300757543 /* README.md */,
 				A5F7ED781D8C4EEF00F4E5B2 /* Products */,
 				B18A5BF46028D322F095CF58 /* Pods */,
 				5AE3BEAE394B09E63427BB1A /* Frameworks */,
@@ -627,7 +624,6 @@
 				A5E3C2CF1D8E9B4B004C28E0 /* UClass.swift in Sources */,
 				A5E3C2D51D8EB9B9004C28E0 /* L5TableViewController.swift in Sources */,
 				A582124B1D8C6F7400FB7F46 /* L2TableViewController.swift in Sources */,
-				A51C9ABC1DB4F02300757543 /* README.md in Sources */,
 				A591FEFE1D8D39FE001AFFF0 /* UITableViewController.swift in Sources */,
 				A5DC349B1D9C46EC0099F965 /* URLOpen.swift in Sources */,
 				A5E3C2D31D8EAA4C004C28E0 /* ULocation.swift in Sources */,
