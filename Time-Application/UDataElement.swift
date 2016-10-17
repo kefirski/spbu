@@ -10,23 +10,26 @@ import Foundation
 import SwiftyJSON
 
 class UDataElement: UJSONEmbed {
+    
     let title: String
-    let JSON_URI: String?
-    let URI: String?
+    let jsonURI: String?
+    let uri: String?
     
     let rawData: [JSON]?
     
     init(from json: JSON, withRawData: Bool = false) {
-        self.title = json["title"].string!
-        self.JSON_URI = json["JSON_URI"].string
-        self.URI = json["URI"].string
+        
+        title = json["title"].string!
+        jsonURI = json["JSON_URI"].string
+        uri = json["URI"].string
         
         if withRawData {
-            let count = (json.count)-1
+            
+            let count = json.count - 1
             
             if count != 0 {
-                let range = 1...(count)
-                rawData = range.map {json["\($0)"]}
+                let range = 1...count
+                rawData = range.map { json["\($0)"] }
             } else {
                 rawData = []
             }
@@ -37,47 +40,47 @@ class UDataElement: UJSONEmbed {
     }
 }
 
-class UDataElementStudyDay: UDataElement {
-    let TSBegin: Int
-    let TSEnd: Int
+final class UDataElementStudyDay: UDataElement {
+    
+    let timestampBegin: Int
+    let timestampEnd: Int
     var classes: [UClass]!
-
-     init?(from json: JSON) {
+    
+    init?(from json: JSON) {
         
-        guard let TSBegin = json["TS_begin"].int, let TSEnd = json["TS_end"].int else {
+        guard let timestampBegin = json["TS_begin"].int,
+            let timestampEnd = json["TS_end"].int else {
+                
             // I am afraid that in some cases timestamps could be not included in data
             // so this day should be dropped out
             return nil
         }
         
-        self.TSBegin = TSBegin
-        self.TSEnd = TSEnd
+        self.timestampBegin = timestampBegin
+        self.timestampEnd = timestampEnd
         
         super.init(from: json, withRawData: true)
         
-        self.classes = self.rawData!.map {UClass(from: $0)}.flatMap {$0}
+        classes = rawData!.flatMap(UClass.init)
     }
     
     var isEnded: Bool {
-        return TSEnd > Time.now ? false : true
-    }
-    
-    var notEnded: Bool {
-        return TSEnd > Time.now ? true : false
-
+        return timestampEnd <= Time.now
     }
 }
 
-class UDataElementWithForm: UDataElement {
+final class UDataElementWithForm: UDataElement {
+    
     let form: String
     
     init(from json: JSON) {
-        self.form = json["form"].string!
+        form = json["form"].string!
         super.init(from: json)
     }
 }
 
-class GroupedUDataElement {
+final class GroupedUDataElement {
+    
     let form: String
     let groupedElements: [UDataElementWithForm]
     
@@ -88,7 +91,6 @@ class GroupedUDataElement {
 }
 
 protocol UJSONEmbed {
-    var JSON_URI: String? { get }
-    var URI: String? { get }
+    var jsonURI: String? { get }
+    var uri: String? { get }
 }
-

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class L4TableViewController: UITableViewController {
+final class L4TableViewController: UITableViewController {
     
     var jsonURI: String!
     let representation = URepresentation()
@@ -19,20 +19,14 @@ class L4TableViewController: UITableViewController {
         setupUI()
         
         let target = UService.getData(path: jsonURI, onLevel: .l4)
-        representation.loadDataWith(target) { result in
-            self.reloadDataDependingOn(result)
+        representation.loadData(with: target) { [weak self] result in
+            self?.reloadData(dependingOn:result)
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return representation.data.count
@@ -41,13 +35,11 @@ class L4TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "l4Cell", for: indexPath) as! SimpleTableViewCell
         cell.setBackgroundColor()
-
         
         let dataElement = representation.data[indexPath.row] as! UDataElement
         
         cell.title.text = dataElement.title
         cell.title.textColor = UColor.greyContentColor
-
 
         return cell
     }
@@ -64,9 +56,6 @@ class L4TableViewController: UITableViewController {
         
         let dataElement = representation.data[indexPath.row] as! UDataElement
         
-        destination.jsonURI = dataElement.JSON_URI!
+        destination.jsonURI = dataElement.jsonURI!
     }
 }
-
-
-

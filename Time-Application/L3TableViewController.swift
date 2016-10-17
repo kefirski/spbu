@@ -8,7 +8,7 @@
 
 import UIKit
 
-class L3TableViewController: UITableViewController {
+final class L3TableViewController: UITableViewController {
 
     var jsonURI: String!
     let representation = URepresentation()
@@ -19,13 +19,9 @@ class L3TableViewController: UITableViewController {
         setupUI()
         
         let target = UService.getData(path: jsonURI, onLevel: .l3)
-        representation.loadDataWith(target) { result in
-            self.reloadDataDependingOn(result)
+        representation.loadData(with: target) { [weak self] result in
+            self?.reloadData(dependingOn:result)
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     // MARK: - Table view data source
@@ -69,7 +65,7 @@ class L3TableViewController: UITableViewController {
         
         let dataElement = getDataElement(for: indexPath)
         
-        destination.jsonURI = dataElement.JSON_URI!
+        destination.jsonURI = dataElement.jsonURI!
         
     }
     
@@ -79,10 +75,4 @@ class L3TableViewController: UITableViewController {
         
         return dataElement
     }
-
 }
-
-
-
-
-

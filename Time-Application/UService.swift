@@ -11,13 +11,15 @@ import Foundation
 import Moya
 import Alamofire
 
+/// Represents the level of the timetable (i.e. root level is .l1)
 enum ULevel: Int {
-    // represents level of timetable (i.e. root level is .l1)
     case l1 = 1, l2, l3, l4, l5, widget
-    
-    // returns level mark (i.e for level .l1 returns "?L1")
+}
+
+extension ULevel {
+    /// Returns level mark (i.e for level .l1 returns "?L1")
     var mark: String {
-        return "\(self.rawValue)"
+        return "\(rawValue)"
     }
 }
 
@@ -25,17 +27,18 @@ enum UService {
     case getData(path: String, onLevel: ULevel)
 }
 
-
 extension UService: TargetType {
+    
     var baseURL: URL {
         return URL(string: "https://tt.rusunix.org")!
     }
     
+    /// Returns path embed with level mark (i.e. for root level with "root.json" path and .l1 level,
+    /// it returns "root.json?L1")
     var path: String {
-    // returns path embed with level mark (i.e. for root level with "root.json" path and .l1 level, it returns "root.json?L1")
         switch self {
-            case .getData(let path, _) :
-                return path
+        case .getData(let path, _):
+            return path
         }
     }
     
@@ -43,15 +46,15 @@ extension UService: TargetType {
         return .get
     }
     
-    var parameters: [String: Any]? {
+    var parameters: [String : Any]? {
         switch self {
-        case .getData( _, let level) :
+        case .getData(_, let level):
             return ["level": level.mark]
         }
     }
     
     var sampleData: Data {
-        return "".UTF8EncodedData
+        return "".utf8EncodedData
     }
     
     var task: Task {
@@ -60,11 +63,11 @@ extension UService: TargetType {
 }
 
 extension String {
-    var URLEscapedString: String {
-        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
+    
+    var urlEscapedString: String {
+        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
-    var UTF8EncodedData: Data {
-        return self.data(using: String.Encoding.utf8)!
+    var utf8EncodedData: Data {
+        return data(using: .utf8)!
     }
 }
-

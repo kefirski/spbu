@@ -11,104 +11,84 @@ import SwiftyJSON
 import Result
 import Async
 
-class URepresentation {
+final class URepresentation {
     
-    fileprivate var _data: [AnyObject]?
-    fileprivate var _metadata: Metadata?
+    private var _data: [AnyObject]?
+    private var _metadata: Metadata?
     
     let networkingBrain = UNetworking()
     
-    func loadDataWith(_ target: UService, rawData: Bool = false, andThen performCallback: @escaping UVoidClojure) {
+    func loadData(with target: UService, rawData: Bool = false, _ callback: @escaping UVoidClosure) {
         
         // representations with different targets should prepare data in different way
         // raw data uses when it is necessary to store in UDataElement not only main data
         
-        // UVoidClojure is discribed in UResult file
-        
-        self.clearData()
+        clearData()
         
         switch target {
         case .getData(_, let level):
-            networkingBrain.loadDataWith(target) { result in
+            
+            networkingBrain.loadData(with: target) { [weak self] result in
                 switch result {
                 case .success(let data):
                     // fill data and metadata from json
                     let rawJSON = JSON(data: data)
-                    self.fillData(with: rawJSON, dependingOn: level, using: rawData, andThen: performCallback)
-                    
+                    self?.fillData(with: rawJSON, dependingOn: level, using: rawData, callback)
+
                 case .failure(let error):
                     // callback with connection error
-                    performCallback(.failure(error))
-                    
+                    callback(.failure(error))
                 }
             }
         }
     }
     
-    var data: [AnyObject] {
-        if let _data = _data {
-            return _data
-        } else {
-            return []
-        }
-    }
+    var data: [AnyObject] { return _data ?? [] }
     
     var metadata: Metadata? {
         return _metadata
     }
     
-    fileprivate func fillData(with rawJSON: JSON, dependingOn level: ULevel, using rawData: Bool, andThen performCallback: UVoidClojure) {
+    private func fillData(with rawJSON: JSON,
+                          dependingOn level: ULevel,
+                          using rawData: Bool, _ callback: UVoidClosure) {
         
-        let (dataJSON, metadataJSON) = self.extractDataAndMetadata(from: rawJSON)
+        let (dataJSON, metadataJSON) = extractDataAndMetadata(from: rawJSON)
         
         self._metadata = Metadata(from: metadataJSON)
         
         guard dataJSON.exists() else {
-            performCallback(.failure(.dataError))
+            callback(.failure(.dataError))
             return
         }
         
-        let jsons: [JSON] = self.jsonArrayFrom(json: dataJSON)
+        let jsons = jsonArrayFrom(json: dataJSON)
         
         switch level {
         case .l1, .l2, .l4:
-            self._data = jsons.map { item in
-                return UDataElement(from: item, withRawData: rawData)
-            }
+            _data = jsons.map { item in UDataElement(from: item, withRawData: rawData) }
         case .l3:
-            let rawData: [UDataElementWithForm] = jsons.map { item in
-                return UDataElementWithForm(from: item)
-            }
-            self._data = rawData.groupByForm()
-            
+            let rawData = jsons.map { item in  UDataElementWithForm(from: item) }
+            _data = rawData.groupByForm()
         case .l5, .widget:
-            self._data = jsons.flatMap { item in
-                return UDataElementStudyDay(from: item)
-            }
+            _data = jsons.flatMap(UDataElementStudyDay.init)
         }
         
-        performCallback(.success())
+        callback(.success())
         
     }
     
-    fileprivate func extractDataAndMetadata(from: JSON) -> (JSON, JSON) {
+    private func extractDataAndMetadata(from: JSON) -> (JSON, JSON) {
         return (from["data"], from["metadata"])
     }
     
-     fileprivate func jsonArrayFrom(json: JSON) -> [JSON] {
+    private func jsonArrayFrom(json: JSON) -> [JSON] {
         let range = 1...json.count
-        return range.map {json["\($0)"]}
+        return range.map { json["\($0)"] }
     }
     
-    fileprivate func clearData() {
+    private func clearData() {
         _data = nil
         _metadata = nil
     }
-    
-   
-    
 }
-
-
-
-

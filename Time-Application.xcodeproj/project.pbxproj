@@ -22,11 +22,8 @@
 		A50777E91DABEFDC004A02D6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571ACA11D8EFD5D00CC1749 /* Color.swift */; };
 		A50777EA1DABEFDC004A02D6 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C4B1D90326D00F0CB5B /* Time.swift */; };
 		A50777EB1DABEFDC004A02D6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */; };
-		A50777ED1DABEFDC004A02D6 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582124D1D8C798800FB7F46 /* Optional.swift */; };
 		A50777EE1DABEFDC004A02D6 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56590281D9D5C4000E2E5B6 /* Updatable.swift */; };
 		A50777EF1DABEFDC004A02D6 /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FEFD1D8D39FE001AFFF0 /* UITableViewController.swift */; };
-		A50777F01DABEFDC004A02D6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571AC9E1D8EF7ED00CC1749 /* UIColor.swift */; };
-		A50777F11DABEFDC004A02D6 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59AE1E01D8D21AD0060A17F /* Async.swift */; };
 		A50777F21DABEFDC004A02D6 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF041D8D5902001AFFF0 /* Array.swift */; };
 		A50777F31DABEFDC004A02D6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3C2D01D8EA170004C28E0 /* String.swift */; };
 		A525EC431D8C4F9900F86E7D /* UDataElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525EC3D1D8C4F9900F86E7D /* UDataElement.swift */; };
@@ -43,16 +40,13 @@
 		A54A09981DABF99D0037D5BF /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C421D8FEE3C00F0CB5B /* ClassTableViewCell.swift */; };
 		A55AEE2E1D98FDD5001E5EE1 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */; };
 		A56590291D9D5C4000E2E5B6 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56590281D9D5C4000E2E5B6 /* Updatable.swift */; };
-		A571AC9F1D8EF7ED00CC1749 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571AC9E1D8EF7ED00CC1749 /* UIColor.swift */; };
 		A571ACA21D8EFD5D00CC1749 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571ACA11D8EFD5D00CC1749 /* Color.swift */; };
 		A582124B1D8C6F7400FB7F46 /* L2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582124A1D8C6F7400FB7F46 /* L2TableViewController.swift */; };
-		A582124E1D8C798800FB7F46 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582124D1D8C798800FB7F46 /* Optional.swift */; };
 		A591FEFC1D8D355E001AFFF0 /* L3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FEFB1D8D355E001AFFF0 /* L3TableViewController.swift */; };
 		A591FEFE1D8D39FE001AFFF0 /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FEFD1D8D39FE001AFFF0 /* UITableViewController.swift */; };
 		A591FF011D8D3B12001AFFF0 /* UResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF001D8D3B12001AFFF0 /* UResult.swift */; };
 		A591FF031D8D56F4001AFFF0 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF021D8D56F4001AFFF0 /* Metadata.swift */; };
 		A591FF051D8D5902001AFFF0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591FF041D8D5902001AFFF0 /* Array.swift */; };
-		A59AE1E11D8D21AD0060A17F /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59AE1E01D8D21AD0060A17F /* Async.swift */; };
 		A5C18C411D8FC8FA00F0CB5B /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C401D8FC8FA00F0CB5B /* SimpleTableViewCell.swift */; };
 		A5C18C431D8FEE3C00F0CB5B /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C421D8FEE3C00F0CB5B /* ClassTableViewCell.swift */; };
 		A5C18C491D9013B800F0CB5B /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18C481D9013B800F0CB5B /* HeaderTableViewCell.swift */; };
@@ -113,16 +107,13 @@
 		A54A09951DABF4810037D5BF /* TodayTimeApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayTimeApplication.entitlements; sourceTree = "<group>"; };
 		A55AEE2D1D98FDD5001E5EE1 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		A56590281D9D5C4000E2E5B6 /* Updatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updatable.swift; sourceTree = "<group>"; };
-		A571AC9E1D8EF7ED00CC1749 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A571ACA11D8EFD5D00CC1749 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A582124A1D8C6F7400FB7F46 /* L2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L2TableViewController.swift; sourceTree = "<group>"; };
-		A582124D1D8C798800FB7F46 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		A591FEFB1D8D355E001AFFF0 /* L3TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L3TableViewController.swift; sourceTree = "<group>"; };
 		A591FEFD1D8D39FE001AFFF0 /* UITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
 		A591FF001D8D3B12001AFFF0 /* UResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UResult.swift; sourceTree = "<group>"; };
 		A591FF021D8D56F4001AFFF0 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		A591FF041D8D5902001AFFF0 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		A59AE1E01D8D21AD0060A17F /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		A5C18C401D8FC8FA00F0CB5B /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
 		A5C18C421D8FEE3C00F0CB5B /* ClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
 		A5C18C441D8FFB3C00F0CB5B /* Time-Application-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Time-Application-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -180,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				A591FEFD1D8D39FE001AFFF0 /* UITableViewController.swift */,
-				A571AC9E1D8EF7ED00CC1749 /* UIColor.swift */,
 			);
 			name = "UI Extensions";
 			sourceTree = "<group>";
@@ -304,10 +294,8 @@
 		A5CB388E1D8E851C0003DB74 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A582124D1D8C798800FB7F46 /* Optional.swift */,
 				A52D84741D8F13720019BC80 /* Protocols */,
 				A52D84731D8F12510019BC80 /* UI Extensions */,
-				A59AE1E01D8D21AD0060A17F /* Async.swift */,
 				A591FF041D8D5902001AFFF0 /* Array.swift */,
 				A5E3C2D01D8EA170004C28E0 /* String.swift */,
 			);
@@ -422,7 +410,7 @@
 				TargetAttributes = {
 					A5337E8C1DABE66B00B1851B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8JS35K8859;
+						DevelopmentTeam = N4X84VA3BB;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -433,7 +421,7 @@
 					};
 					A5F7ED761D8C4EEF00F4E5B2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8JS35K8859;
+						DevelopmentTeam = N4X84VA3BB;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -597,11 +585,8 @@
 				A50777E91DABEFDC004A02D6 /* Color.swift in Sources */,
 				A50777EA1DABEFDC004A02D6 /* Time.swift in Sources */,
 				A50777EB1DABEFDC004A02D6 /* Defaults.swift in Sources */,
-				A50777ED1DABEFDC004A02D6 /* Optional.swift in Sources */,
 				A50777EE1DABEFDC004A02D6 /* Updatable.swift in Sources */,
 				A50777EF1DABEFDC004A02D6 /* UITableViewController.swift in Sources */,
-				A50777F01DABEFDC004A02D6 /* UIColor.swift in Sources */,
-				A50777F11DABEFDC004A02D6 /* Async.swift in Sources */,
 				A50777F21DABEFDC004A02D6 /* Array.swift in Sources */,
 				A50777F31DABEFDC004A02D6 /* String.swift in Sources */,
 				A50777DF1DABECB4004A02D6 /* TodayTableViewController.swift in Sources */,
@@ -615,10 +600,8 @@
 				A55AEE2E1D98FDD5001E5EE1 /* Defaults.swift in Sources */,
 				A591FF031D8D56F4001AFFF0 /* Metadata.swift in Sources */,
 				A5C18C491D9013B800F0CB5B /* HeaderTableViewCell.swift in Sources */,
-				A571AC9F1D8EF7ED00CC1749 /* UIColor.swift in Sources */,
 				A525EC431D8C4F9900F86E7D /* UDataElement.swift in Sources */,
 				A5F7ED7B1D8C4EEF00F4E5B2 /* AppDelegate.swift in Sources */,
-				A582124E1D8C798800FB7F46 /* Optional.swift in Sources */,
 				A5C18C4C1D90326D00F0CB5B /* Time.swift in Sources */,
 				A525EC461D8C4F9900F86E7D /* URepresentation.swift in Sources */,
 				A5E3C2CF1D8E9B4B004C28E0 /* UClass.swift in Sources */,
@@ -635,7 +618,6 @@
 				A525EC481D8C4F9900F86E7D /* UNetworkingError.swift in Sources */,
 				A5E3C2D11D8EA170004C28E0 /* String.swift in Sources */,
 				A591FF011D8D3B12001AFFF0 /* UResult.swift in Sources */,
-				A59AE1E11D8D21AD0060A17F /* Async.swift in Sources */,
 				A5C18C411D8FC8FA00F0CB5B /* SimpleTableViewCell.swift in Sources */,
 				A5C18C431D8FEE3C00F0CB5B /* ClassTableViewCell.swift in Sources */,
 				A5CB38921D8E8A170003DB74 /* L4TableViewController.swift in Sources */,
@@ -688,7 +670,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TodayTimeApplication/TodayTimeApplication.entitlements;
-				DEVELOPMENT_TEAM = 8JS35K8859;
+				DEVELOPMENT_TEAM = N4X84VA3BB;
 				INFOPLIST_FILE = TodayTimeApplication/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -707,7 +689,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TodayTimeApplication/TodayTimeApplication.entitlements;
-				DEVELOPMENT_TEAM = 8JS35K8859;
+				DEVELOPMENT_TEAM = N4X84VA3BB;
 				INFOPLIST_FILE = TodayTimeApplication/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -820,7 +802,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Time-Application/Time-Application.entitlements";
-				DEVELOPMENT_TEAM = 8JS35K8859;
+				DEVELOPMENT_TEAM = N4X84VA3BB;
 				INFOPLIST_FILE = "Time-Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -840,7 +822,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Time-Application/Time-Application.entitlements";
-				DEVELOPMENT_TEAM = 8JS35K8859;
+				DEVELOPMENT_TEAM = N4X84VA3BB;
 				INFOPLIST_FILE = "Time-Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

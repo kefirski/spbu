@@ -11,33 +11,32 @@ import UIKit
 class ClassTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var timeBegin: UILabel!
-    @IBOutlet weak var timeEnd: UILabel!
+    @IBOutlet var timeBegin: UILabel!
+    @IBOutlet var timeEnd: UILabel!
     
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var location: UILabel!
+    @IBOutlet var title: UILabel!
+    @IBOutlet var location: UILabel!
     
-    @IBOutlet weak var separator: UIView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet var separator: UIView!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         let color = separator.backgroundColor
+        
         super.setSelected(selected, animated: animated)
         
-        if(selected) {
+        if selected {
             separator.backgroundColor = color
         }
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        
         let color = separator.backgroundColor
+        
         super.setHighlighted(highlighted, animated: animated)
         
-        if(highlighted) {
+        if highlighted {
             separator.backgroundColor = color
         }
     }

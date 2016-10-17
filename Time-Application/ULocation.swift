@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class ULocation {
+struct ULocation {
     
     let title: String
     let latitude: Double

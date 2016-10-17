@@ -11,51 +11,51 @@ import UIKit
 import Result
 
 extension UITableViewController {
-    func reloadDataDependingOn(_ result: UVoidResult, success: () -> Void = {}) -> Void {
+    
+    func reloadData(dependingOn result: UVoidResult, success: () -> Void = {}) -> Void {
         switch result {
         case .success():
-            self.tableView.reloadData()
+            tableView.reloadData()
             success()
         case .failure(let error):
             print("error")
             switch error {
-                case .dataError: print("data error")
-                case .networkFailure: print("network error")
-                case .responseCodeError: print("response error")
+            case .dataError: print("data error")
+            case .networkFailure: print("network error")
+            case .responseCodeError: print("response error")
             }
         }
         
-        self.refreshControl?.endRefreshing()
+        refreshControl?.endRefreshing()
     }
     
-    func setupUI(f: () -> Void = {}) {
+    func setupUI(_ f: () -> Void = {}) {
         tableView.setBackgroundColor()
         tableView.separatorColor = UColor.lightGreyContentColor
         
         f()
     }
     
-    var mainRowHeight: CGFloat {
-        return 65
-    }
+    var mainRowHeight: CGFloat { return 65 }
     
     func setupNavigationBar() {
-        if let navigationBar = self.navigationController?.navigationBar {
-            let img = UIImage()
-            navigationBar.shadowImage = img
-            navigationBar.setBackgroundImage(img, for: .default)
-            
-            navigationBar.backgroundColor = UColor.backgroundColor
-            navigationBar.tintColor = UColor.greyContentColor
-            
-            let backItem = UIBarButtonItem()
-            backItem.title = "Назад"
-            navigationItem.backBarButtonItem = backItem
-        }
+        
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        
+        let img = UIImage()
+        navigationBar.shadowImage = img
+        navigationBar.setBackgroundImage(img, for: .default)
+        
+        navigationBar.backgroundColor = UColor.backgroundColor
+        navigationBar.tintColor = UColor.greyContentColor
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Назад"
+        navigationItem.backBarButtonItem = backItem
     }
     
     func scrollToTop() {
         let indexPath = IndexPath(row: 0, section: 0)
-        self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: false)
     }
 }
