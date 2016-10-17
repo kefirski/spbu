@@ -23,7 +23,7 @@ final class URepresentation {
         // representations with different targets should prepare data in different way
         // raw data uses when it is necessary to store in UDataElement not only main data
         
-        clearData()
+//        clearData()
         
         switch target {
         case .getData(_, let level):

@@ -14,13 +14,13 @@ struct ULocation {
     let title: String
     let latitude: Double
     let longitude: Double
-    let unit: String
+    let unit: String?
     
     init(from json: JSON) {
         title = json["location"].string!
         latitude = json["latitude"].double!
         longitude = json["longitude"].double!
-        unit = json["unit"].string!
+        unit = json["unit"].string
     }
     
 }
