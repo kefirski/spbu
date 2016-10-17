@@ -668,11 +668,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51C723DECEE47AD12671B9FF /* Pods-TodayTimeApplication.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TodayTimeApplication/TodayTimeApplication.entitlements;
 				DEVELOPMENT_TEAM = N4X84VA3BB;
 				INFOPLIST_FILE = TodayTimeApplication/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Gavrilov.Time-Application.TodayTimeApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -687,11 +688,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E24A63B01E6178219ACF849B /* Pods-TodayTimeApplication.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TodayTimeApplication/TodayTimeApplication.entitlements;
 				DEVELOPMENT_TEAM = N4X84VA3BB;
 				INFOPLIST_FILE = TodayTimeApplication/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Gavrilov.Time-Application.TodayTimeApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
