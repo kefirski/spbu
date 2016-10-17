@@ -9,31 +9,16 @@
 import Foundation
 import UIKit
 
-class UColor {
-    static var backgroundColor: UIColor {
-        return UIColor(netHex: 0xFBFCFD)
-    }
-    
-    static var redContentColor: UIColor {
-        return UIColor(netHex: 0x3462fe)
-    }
-    
-    static var greyContentColor: UIColor {
-        return UIColor(netHex: 0x4f4f4f)
-    }
-    
-    static var lightGreyContentColor: UIColor {
-        return UIColor(netHex: 0xe8e8e8)
-    }
-    
-    static var lightBlueContentColor: UIColor {
-        return UIColor(netHex: 0xcce6ff)
-    }
-
+struct UColor {
+    static let backgroundColor = #colorLiteral(red: 0.9843137255, green: 0.9882352941, blue: 0.9921568627, alpha: 1)
+    static let redContentColor = #colorLiteral(red: 0.2039215686, green: 0.3843137255, blue: 0.9960784314, alpha: 1)
+    static let greyContentColor = #colorLiteral(red: 0.3098039216, green: 0.3098039216, blue: 0.3098039216, alpha: 1)
+    static let lightGreyContentColor = #colorLiteral(red: 0.9098039216, green: 0.9098039216, blue: 0.9098039216, alpha: 1)
+    static let lightBlueContentColor = #colorLiteral(red: 0.8, green: 0.9019607843, blue: 1, alpha: 1)
 }
 
 extension UIView {
     func setBackgroundColor() {
-        self.backgroundColor = UColor.backgroundColor
+        backgroundColor = UColor.backgroundColor
     }
 }

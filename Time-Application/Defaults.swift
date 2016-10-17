@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Defaults {
+struct Defaults {
     
-    static func saveUserSchedule(URI: String) {
+    static func saveUserSchedule(uri: String) {
         let defaults = UserDefaults(suiteName: "group.daniilGavrilov.TimeApplication")!
-        defaults.set(URI, forKey: "userSchedule")
+        defaults.set(uri, forKey: "userSchedule")
     }
     
     static func userSchedule() -> String? {

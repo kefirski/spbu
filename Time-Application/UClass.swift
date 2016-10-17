@@ -9,7 +9,8 @@
 import Foundation
 import SwiftyJSON
 
-class UClass {
+struct UClass {
+    
     let location: String?
     
     let title: String
@@ -21,14 +22,16 @@ class UClass {
     
     let unit: String?
     
-    let TSBegin: Int
-    let TSEnd: Int
+    let timestampBegin: Int
+    let timestampEnd: Int
     
     let lunapark: [ULocation]
 
     init?(from json: JSON) {
         
-        guard let TSBegin = json["TS_begin"].int, let TSEnd = json["TS_end"].int else {
+        guard let timestampBegin = json["TS_begin"].int,
+            let timestampEnd = json["TS_end"].int else {
+                
             // this class should be dropped out
             return nil
         }
@@ -36,24 +39,21 @@ class UClass {
         location = json["location"].string
         
         title = json["subject"].string!.uppercaseFirst
-        
-        if let subjectType = json["subjectType"].string?.uppercaseFirst {
-            type = subjectType
-        } else {
-            type = nil
-        }
+        type = json["subjectType"].string?.uppercaseFirst
         
         let (timeBegin, timeEnd) = (json["time_begin"].string!, json["time_end"].string!)
+        
         time = "\(timeBegin) – \(timeEnd)"
+        
         self.timeBegin = timeBegin
         self.timeEnd = timeEnd
         
         unit = json["unit"].string
         
-        self.TSBegin = TSBegin
-        self.TSEnd = TSEnd
+        self.timestampBegin = timestampBegin
+        self.timestampEnd = timestampEnd
         
-        lunapark = json["lunapark"].array!.map {ULocation(from: $0)}
+        lunapark = json["lunapark"].array!.map(ULocation.init)
     }
     
     var mainTitle: String {
@@ -66,13 +66,13 @@ class UClass {
     
     var mainDescription: String? {
         if let unit = unit {
-            return "\(unit)\n\(location.getOr(else: ""))"
+            return "\(unit)\n\(location ?? "")"
         } else {
             return location
         }
     }
     
     var isEnded: Bool {
-        return TSEnd > Time.now ? false : true
+        return timestampEnd <= Time.now
     }
 }

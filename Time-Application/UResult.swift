@@ -11,8 +11,8 @@ import Result
 
 // Uses in URepresentation
 typealias UVoidResult = Result<Void, UNetworkingError>
-typealias UVoidClojure = (UVoidResult) -> Void
+typealias UVoidClosure = (UVoidResult) -> Void
 
 // Uses in UNetworking
 typealias UDataResult = Result<Data, UNetworkingError>
-typealias UDataClojure = (UDataResult) -> Void
+typealias UDataClosure = (UDataResult) -> Void

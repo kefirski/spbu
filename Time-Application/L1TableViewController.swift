@@ -9,7 +9,7 @@
 import UIKit
 import Result
 
-class L1TableViewController: UITableViewController {
+final class L1TableViewController: UITableViewController {
 
     let representation = URepresentation()
     
@@ -25,28 +25,24 @@ class L1TableViewController: UITableViewController {
         update()
     }
     
-    func update() {
-        representation.loadDataWith(target) { result in
-            self.reloadDataDependingOn(result)
+    private func update() {
+        representation.loadData(with: target) { [weak self] result in
+            self?.reloadData(dependingOn:result)
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return representation.data.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "l1Cell", for: indexPath) as! SimpleTableViewCell
+        
         cell.setBackgroundColor()
 
         let faculty = representation.data[indexPath.row] as! UDataElement
@@ -62,6 +58,7 @@ class L1TableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let destination = segue.destination as! L2TableViewController
         
         let cell = sender as! UITableViewCell
@@ -69,13 +66,10 @@ class L1TableViewController: UITableViewController {
         
         let faculty = representation.data[indexPath.row] as! UDataElement
         
-        destination.jsonURI = faculty.JSON_URI!
+        destination.jsonURI = faculty.jsonURI!
     }
 
     @IBAction func unwindToRoot(segue: UIStoryboardSegue) {
         scrollToTop()
     }
 }
-
-
-

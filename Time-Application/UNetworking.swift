@@ -12,20 +12,25 @@ import Moya
 import Result
 import Async
 
-class UNetworking {
+final class UNetworking {
     
-    fileprivate let provider = MoyaProvider<UService>()
+    private let provider = MoyaProvider<UService>()
     
-    func loadDataWith(_ target: UService, and callback: @escaping UDataClojure) {
-        // UDataClojure is discribed in UResult file
+    func loadData(with target: UService, _ callback: @escaping UDataClosure) {
+        
         print("start downloading – target = \(target.baseURL, target.path)")
-    // performs data downloading and pass it through the callback
-        provider.request(target) {result in
+        
+        // perform data downloading and pass it through the callback
+        provider.request(target) { result in
+            
             print("test")
+            
             switch result {
             case let .success(moyaResponse):
-                print("succes with statuscode = \(moyaResponse.statusCode)")
-                // if everything is ok, then pass data through the callback
+                
+                print("succes with status code = \(moyaResponse.statusCode)")
+                
+                // if everything is ok, then pass the data through the callback
                 if moyaResponse.statusCode <= 400 {
                     let data = moyaResponse.data
                     callback(.success(data))
@@ -34,15 +39,17 @@ class UNetworking {
                     callback(.failure(.responseCodeError))
                 }
                 
-            case .failure(_ ):
+            case .failure:
+                
                 print("faulture in downloading \(#file)")
+                
                 // this means there was a network failure - either the request
                 // wasn't sent (connectivity), or no response was received (server
                 // timed out). In this case wait not for a while and try to get data again
                 callback(.failure(.networkFailure))
                 // try to get data again
                 Async.background(after: 4) {
-                    self.loadDataWith(target, and: callback)
+                    self.loadData(with: target, callback)
                 }
             }
         }

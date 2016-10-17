@@ -9,8 +9,8 @@
 import UIKit
 import QuartzCore
 
-class L5TableViewController: UITableViewController, UIActionSheetDelegate {
-
+final class L5TableViewController: UITableViewController, UIActionSheetDelegate {
+    
     var jsonURI: String!
     let representation = URepresentation()
     
@@ -18,7 +18,7 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI {
             tableView.estimatedRowHeight = 85.0
             tableView.rowHeight = UITableViewAutomaticDimension
@@ -27,11 +27,11 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
         }
         
         let target = UService.getData(path: jsonURI, onLevel: .l5)
-        representation.loadDataWith(target) { result in
+        representation.loadData(with: target) { result in
             switch result {
             case .success():
                 // if everything is ok then it is necessary to save jsonURI because this schedule have become default
-                Defaults.saveUserSchedule(URI: self.jsonURI)
+                Defaults.saveUserSchedule(uri: self.jsonURI)
                 
                 self.tableView.reloadData()
                 self.scrollToActualDay()
@@ -44,20 +44,17 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
             }
         }
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
     
     // MARK: - Interacting
     
     @IBAction func backToRootButtonPressed(_ sender: AnyObject) {
         Defaults.deleteUserSchedule()
-        if self.isInitial {
+        if isInitial {
             performSegue(withIdentifier: "backToRoot", sender: sender)
         } else {
             performSegue(withIdentifier: "unwindToRoot", sender: sender)
@@ -66,7 +63,7 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
     
     @IBAction func prevButtonPressed(_ sender: AnyObject) {
         if let metadata = representation.metadata {
-            let uri = metadata.prevWeek!
+            let uri = metadata.previousWeek!
             let target = UService.getData(path: uri, onLevel: .l5)
             
             updateForOtherWeek(with: target)
@@ -83,7 +80,7 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
     }
     
     func updateForOtherWeek(with target: UService) {
-        representation.loadDataWith(target) { result in
+        representation.loadData(with: target) { result in
             switch result {
             case .success():
                 self.tableView.reloadData()
@@ -93,19 +90,20 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
             }
         }
     }
-
+    
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return representation.data.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classesFor(day: section).count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "l5Cell", for: indexPath) as! ClassTableViewCell
         cell.setBackgroundColor()
         
@@ -114,6 +112,7 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
         cell.timeBegin.text = uClass.timeBegin
         cell.timeEnd.text = uClass.timeEnd
         cell.title.text = uClass.mainTitle
+        
         if let location = uClass.mainDescription {
             cell.location.text = location
         } else {
@@ -138,14 +137,14 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
     }
     
     
-     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "Header") as! HeaderTableViewCell
         
         let day = representation.data[section] as! UDataElementStudyDay
         
         headerCell.title.text = day.title.uppercaseFirst
         headerCell.title.textColor = UColor.greyContentColor
-
+        
         return headerCell.contentView
     }
     
@@ -153,7 +152,7 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let uClass = classFor(indexPath)    
+        let uClass = classFor(indexPath)
         if !uClass.lunapark.isEmpty {
             showActionSheet(uClass.lunapark)
         }
@@ -170,31 +169,33 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
         actionSheet.addAction(cancelActionButton)
         
         for location in locations {
+            
             let saveActionButton = UIAlertAction(title: location.title, style: .default) { action in
                 Open.map(on: location)
             }
+            
             actionSheet.addAction(saveActionButton)
         }
         
-        
-        self.present(actionSheet, animated: true, completion: nil)
+        present(actionSheet, animated: true, completion: nil)
     }
     
     // MARK: - Scrolling
     
     func scrollToActualDay() {
         if let indexPath = self.actualDayIndexPath {
-            self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
         }
     }
     
     var actualDayIndexPath: IndexPath? {
+        
         guard !representation.data.isEmpty else {
             return nil
         }
         
         for (index, day) in representation.data.enumerated() {
-            if (day as! UDataElementStudyDay).notEnded {
+            if !(day as! UDataElementStudyDay).isEnded {
                 return IndexPath(row: 0, section: index)
             }
         }
@@ -203,22 +204,17 @@ class L5TableViewController: UITableViewController, UIActionSheetDelegate {
     
     // MARK: - Other
     
-    func classesFor(day d: Int) -> [UClass] {
-        let day = representation.data[d] as! UDataElementStudyDay
+    func classesFor(day: Int) -> [UClass] {
+        let day = representation.data[day] as! UDataElementStudyDay
         return day.classes
     }
     
-    func classFor(day d: Int, index n: Int) -> UClass {
-        let day = representation.data[d] as! UDataElementStudyDay
-        return day.classes[n]
+    func classFor(day: Int, index: Int) -> UClass {
+        let day = representation.data[day] as! UDataElementStudyDay
+        return day.classes[index]
     }
     
     func classFor(_ indexPath: IndexPath) -> UClass {
         return classFor(day: indexPath.section, index: indexPath.row)
     }
-
 }
-
-
-
-

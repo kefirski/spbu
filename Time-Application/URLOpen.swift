@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 
-class Open {
-    fileprivate static func yandexMap(on location: ULocation) {
+struct Open {
+    
+    private static func yandexMap(on location: ULocation) {
+        
         let url = URL(string: "yandexmaps://maps.yandex.ru/?pt=\(location.longitude),\(location.latitude)&z=16&l=map")!
+        
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url)
         } else {
@@ -19,7 +22,7 @@ class Open {
         }
     }
     
-    fileprivate static func appstoreYandex() {
+    private static func appstoreYandex() {
         let url = URL(string: "https://itunes.apple.com/ru/app/yandex.maps/id313877526?mt=8")!
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url)
@@ -29,18 +32,15 @@ class Open {
     }
     
     static func map(on location: ULocation) {
-        if Open.yandexMapAvaible {
-            Open.yandexMap(on: location)
+        if yandexMapAvailable {
+            yandexMap(on: location)
         } else {
-            Open.appstoreYandex()
+            appstoreYandex()
         }
     }
     
-    fileprivate static var yandexMapAvaible: Bool {
-        get {
-            let url = URL(string: "yandexmaps://")!
-            return UIApplication.shared.canOpenURL(url)
-        }
+    private static var yandexMapAvailable: Bool {
+        let url = URL(string: "yandexmaps://")!
+        return UIApplication.shared.canOpenURL(url)
     }
-    
 }

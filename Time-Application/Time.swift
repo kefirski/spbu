@@ -8,8 +8,8 @@
 
 import Foundation
 
-class Time {
+struct Time {
     static var now: Int {
-        return Int(NSDate().timeIntervalSince1970)
+        return Int(Date().timeIntervalSince1970)
     }
 }
