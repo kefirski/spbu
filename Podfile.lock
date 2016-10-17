@@ -1,18 +1,18 @@
 PODS:
-  - Alamofire (4.0.0)
-  - AsyncSwift (1.7.2)
+  - Alamofire (4.0.1)
+  - AsyncSwift (2.0.0)
   - Moya (8.0.0-beta.2):
     - Moya/Core (= 8.0.0-beta.2)
   - Moya/Core (8.0.0-beta.2):
     - Alamofire (~> 4.0.0)
     - Result
   - Result (3.0.0)
-  - SwiftyJSON (3.1.0)
+  - SwiftyJSON (3.1.1)
   - Then (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`)
-  - AsyncSwift (from `https://github.com/duemunk/Async.git`, branch `feature/Swift_3.0`)
+  - AsyncSwift (from `https://github.com/duemunk/Async.git`)
   - Moya (from `https://github.com/Moya/Moya.git`)
   - Result (from `https://github.com/antitypical/Result.git`)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
@@ -22,7 +22,6 @@ EXTERNAL SOURCES:
   Alamofire:
     :git: https://github.com/Alamofire/Alamofire.git
   AsyncSwift:
-    :branch: feature/Swift_3.0
     :git: https://github.com/duemunk/Async.git
   Moya:
     :git: https://github.com/Moya/Moya.git
@@ -35,32 +34,32 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Alamofire:
-    :commit: 0ac38d7e312e87aeea608d384e44401f3d8a6b3d
+    :commit: b98fe26cb86c1c1227185d30b87bd57cb45fbe3c
     :git: https://github.com/Alamofire/Alamofire.git
   AsyncSwift:
-    :commit: a12cda2fb96c0cd0c845ab8a8277df60af8f506f
+    :commit: b7cde3366bbd8a22acdf8898af1a5a97292448f8
     :git: https://github.com/duemunk/Async.git
   Moya:
-    :commit: 2567588adf1f5f88183c8a1e092b5272aa34037d
+    :commit: b4a38c0d4c40aa93faa5419dcf3834c017c66462
     :git: https://github.com/Moya/Moya.git
   Result:
-    :commit: 36393ea4ebeb56bdb2e6c6502d79905f255391a4
+    :commit: 25f2d7c051df40d173519814126a5d88ac720030
     :git: https://github.com/antitypical/Result.git
   SwiftyJSON:
-    :commit: d075ce98e9c0cfe608a6ff1b28389527dc3cf718
+    :commit: 707516458b618c48ad9365d23a0dad3c3b860fa0
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
   Then:
     :commit: ae877780124abcf0811673dddf504a28b2a716a6
     :git: https://github.com/devxoul/Then.git
 
 SPEC CHECKSUMS:
-  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
-  AsyncSwift: 15c496983f752a3ab8d1be17e64dd4c6f2a31239
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AsyncSwift: 6ba6ed9ecb51344458063f7c86fe447ab824e313
   Moya: 920d40f738e6f4ece84010cec701bb9693be8251
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
-  SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   Then: 460074ffe907de3536d5e88f189dac5ef7cf0869
 
-PODFILE CHECKSUM: 02a600af52a53cc82d0732573e674ab2471954b0
+PODFILE CHECKSUM: ed133dd7bf9d9bc34a79be24f48ee32adfb93608
 
 COCOAPODS: 1.0.1
